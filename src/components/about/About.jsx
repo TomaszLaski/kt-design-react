@@ -4,31 +4,33 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import dom from './../../assets/dom.jpg'
 import './About.css'
+import { Container, Row, Col } from 'react-bootstrap';
 
 const About = () => {
   const [open, setOpen] = React.useState(false);
   const gallery = [
-    {id: 1 ,dom},
-    {id: 2 ,dom},
-    {id: 3 ,dom},
-    {id: 4 ,dom},
-    {id: 5 ,dom},
+    { id: 1, dom },
+    { id: 2, dom },
+    { id: 3, dom },
+    { id: 4, dom },
+    { id: 5, dom },
   ]
   const renderedImages = gallery.map((image) => {
-    return <img className='entryImg' key={image.id} src={image.dom} onClick={() => setOpen(true)} />
-
-
-  })
+    return <Col xs={6} md={4} lg={3}>
+      <img className='entryImg' key={image.id} src={image.dom} onClick={() => setOpen(true)} />
+    </Col>
+    
+  });
   return (
     <>
       <NavigationBar />
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-4" >
-            {renderedImages}
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Row>
+          {renderedImages}
+        </Row>
+      </Container>
+
+
 
       <Lightbox
         open={open}
