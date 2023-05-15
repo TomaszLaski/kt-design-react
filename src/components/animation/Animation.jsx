@@ -1,6 +1,6 @@
 import React from 'react';
 
-const animation = () => {
+const Animation = () => {
   return (
     <div>
       hello from animation
@@ -8,4 +8,4 @@ const animation = () => {
   );
 };
 
-export default animation;
+export default Animation;
