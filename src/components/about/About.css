@@ -9,3 +9,9 @@
     font-family: 'Roboto', cursive;
     font-size: 4rem;
 }
+
+@media screen and (max-width: 992px) {
+    .name {
+        font-size: 2rem;
+    }
+}
