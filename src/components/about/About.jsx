@@ -1,10 +1,10 @@
 import React from 'react';
-import NavigationBar from '../navbar/NavigationBar';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import dom from './../../assets/dom.jpg';
 import './About.css';
 import { Container, Row, Col } from 'react-bootstrap';
+import Layout from '../layout/Layout';
 
 const About = () => {
 	const [open, setOpen] = React.useState(false);
@@ -31,8 +31,7 @@ const About = () => {
 		);
 	});
 	return (
-		<>
-			<NavigationBar />
+		<Layout>
 			<Container>
 				<Row>{renderedImages}</Row>
 			</Container>
@@ -42,7 +41,11 @@ const About = () => {
 				close={() => setOpen(false)}
 				slides={[{ src: dom }, { src: dom }, { src: dom }]}
 			/>
-		</>
+		</Layout>
+		
+			
+			
+		
 	);
 };
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import NavigationBar from '../navbar/NavigationBar';
+import Layout from '../layout/Layout';
 const Animation = () => {
   return (
-    <>
-      <NavigationBar />
-    </>
+    <Layout>
+      
+    </Layout>
     
   );
 };

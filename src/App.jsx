@@ -10,9 +10,10 @@ function App() {
   
   return (
     <BrowserRouter>
+    
     <Routes>
-      <Route path="/" element={<EntryPage/>}></Route>
-      <Route path="/index" element={<NavigationBar/>}></Route>
+      <Route exact path="/" element={<EntryPage/>}></Route>
+      {/* <Route path="/abouts" element={<NavigationBar/>}></Route> */}
       <Route path='/about' element ={<About />}></Route>
       <Route path='/animation' element ={<Animation/>}></Route>
       <Route path='/contact' element ={<Contact/>}></Route>
@@ -21,4 +22,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

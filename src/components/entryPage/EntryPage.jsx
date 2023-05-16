@@ -11,7 +11,7 @@ const EntryPage = () => {
 					<div className='col-lg-6 entry-page'>
 						<p className='logo'>Logo</p>
 						<h1>KT Studio</h1>
-						<Link to='/index'>
+						<Link to='/about'>
 							<button type='button' className='btn btn-lg btn-outline-dark'>
 								Enter
 							</button>
