@@ -2,11 +2,13 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import './NavigationBar.css'
 
 const NavigationBar = () => {
 
   const links = [
     { label: 'About', path: '/about' },
+    { label: 'Portfolio', path: '/portfolio'},
     { label: 'Animation', path: '/animation' },
     { label: 'Contact', path: '/contact' }
   ]
@@ -21,7 +23,7 @@ const NavigationBar = () => {
       <Navbar collapseOnSelect expand='sm' bg='light' varian='light'>
         <Navbar.Toggle aria-controls='navbarScrool' data-bs-target='#navbarScrool' />
         <Link to='/'>
-          <Navbar.Brand className='nav-item m-3 ms-auto'>KT</Navbar.Brand>
+          <Navbar.Brand className='nav-item m-3 ms-auto'>KT Design</Navbar.Brand>
         </Link>
         <Navbar.Collapse id='navbarScroll' className='ms-auto'>
           <Nav className='ml-auto'>
