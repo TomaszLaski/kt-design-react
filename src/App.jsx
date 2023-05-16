@@ -14,7 +14,6 @@ function App() {
     
     <Routes>
       <Route exact path="/" element={<EntryPage/>}></Route>
-      {/* <Route path="/abouts" element={<NavigationBar/>}></Route> */}
       <Route path='/about' element ={<About />}></Route>
       <Route path='/portfolio' element ={<Portfolio/>}></Route>
       <Route path='/animation' element ={<Animation/>}></Route>

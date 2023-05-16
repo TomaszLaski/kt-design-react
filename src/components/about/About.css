@@ -1,9 +1,5 @@
-.entryImg {
-    padding-top: 5px;
-    height: auto;
-    max-width: 100%;
-}
-.entryImg:hover {
-    opacity: 0.9;
-    cursor: pointer
+.textField{
+    padding-top: 2rem;
+    width: 45%;
+    margin: 0 auto;
 }
