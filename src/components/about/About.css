@@ -3,3 +3,9 @@
     width: 45%;
     margin: 0 auto;
 }
+.name {
+    padding: 0.5rem;
+    text-align: center;
+    font-family: 'Roboto', cursive;
+    font-size: 4rem;
+}
