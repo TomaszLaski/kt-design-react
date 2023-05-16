@@ -1,0 +1,32 @@
+#entryPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-top: 40px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.logo {
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.entry-page {
+  margin: 50px auto;
+}
+
+.btn {
+  margin-top: 40px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.entryImg {
+  height: auto;
+  max-width: 100%;
+  width: fit-content;
+}
