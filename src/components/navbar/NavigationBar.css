@@ -3,14 +3,15 @@
  }
  .brand {
     color:white;
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
 }
 
 .nav-item {
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+   
 }
 
 .nav-item:hover {
     transition: 0.5s;
     transform: scale(1.2);
-    text-decoration: underline;
 }

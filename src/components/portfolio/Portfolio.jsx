@@ -9,14 +9,14 @@ import Layout from '../layout/Layout';
 function Portfolio() {
     const [open, setOpen] = React.useState(false);
 	const gallery = [
-		{ id: 1, dom },
-		{ id: 2, dom },
-		{ id: 3, dom },
-		{ id: 4, dom },
-		{ id: 5, dom },
-		{ id: 6, dom },
-		{ id: 7, dom },
-		{ id: 8, dom },
+		{ id: 1, label: dom },
+		{ id: 2, label: dom },
+		{ id: 3, label: dom },
+		{ id: 4, label: dom },
+		{ id: 5, label: dom },
+		{ id: 6, label: dom },
+		{ id: 7, label: dom },
+		{ id: 8, label: dom },
 	];
 	const renderedImages = gallery.map((image) => {
 		return (
@@ -24,7 +24,7 @@ function Portfolio() {
 				<img
 					className='entryImg'
 					key={image.id}
-					src={image.dom}
+					src={image.label}
 					onClick={() => setOpen(true)}
 				/>
 			</Col>

@@ -32,7 +32,7 @@ function Footer() {
             <Navbar className='footer' fixed={isContentEmpty ? 'bottom' : ''} bg = '' variant="light">
                 <Container>
 
-                    <Navbar.Brand href="#home">Copyright 2023 KT</Navbar.Brand>
+                    <Navbar.Brand href="#home"><p className='copyright'>Copyright 2023 KT</p></Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="#home"><AiFillFacebook /></Nav.Link>
                         <Nav.Link href="#features"><AiFillInstagram /></Nav.Link>

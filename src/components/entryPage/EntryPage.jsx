@@ -15,10 +15,6 @@ const EntryPage = () => {
 			navigate('/about');
 		}, 2000);
 	};
-	const onAnimationEnd = () => {
-		setAnimateBackground(false);
-	};
-
 
 	return (
 
@@ -30,7 +26,7 @@ const EntryPage = () => {
 						<h1 onClick={handleClick} className='Title'>Welcome to KT Design Studio</h1>
 						<button
 							type='button'
-							className='btn btn-lg'
+							className='btn'
 							onClick={handleClick}
 						>
 							Enter
