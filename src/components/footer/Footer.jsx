@@ -29,7 +29,7 @@ function Footer() {
     };
     return (
         <>
-            <Navbar className='footer' fixed={isContentEmpty ? 'bottom' : ''} bg="light" variant="light">
+            <Navbar className='footer' fixed={isContentEmpty ? 'bottom' : ''} bg = '' variant="light">
                 <Container>
 
                     <Navbar.Brand href="#home">Copyright 2023 KT</Navbar.Brand>

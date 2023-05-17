@@ -8,7 +8,7 @@ const NavigationBar = () => {
 
   const links = [
     { label: 'About', path: '/about' },
-    { label: 'Portfolio', path: '/portfolio'},
+    { label: 'Portfolio', path: '/portfolio' },
     { label: 'Animation', path: '/animation' },
     { label: 'Contact', path: '/contact' }
   ]
@@ -20,17 +20,22 @@ const NavigationBar = () => {
   });
   return (
     <>
-      <Navbar collapseOnSelect expand='sm' bg='light' varian='light'>
-        <Navbar.Toggle aria-controls='navbarScrool' data-bs-target='#navbarScrool' />
-        <Link to='/'>
-          <Navbar.Brand className='nav-item m-3 ms-auto'>KT Design</Navbar.Brand>
-        </Link>
-        <Navbar.Collapse id='navbarScroll' className='ms-auto'>
-          <Nav className='ml-auto'>
-            {renderedLinks}
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      
+        <Navbar className='navbar-inner' collapseOnSelect expand='sm'>
+          <Navbar.Toggle aria-controls='navbarScrool' data-bs-target='#navbarScrool' />
+          <Link to='/'>
+            <Navbar.Brand className='logo nav-item m-3 ms-auto'>
+            <p className='brand'>KT Design</p>
+            </Navbar.Brand>
+          </Link>
+          <Navbar.Collapse id='navbarScroll' className='ms-auto'>
+            <Nav className='ml-auto'>
+              {renderedLinks}
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      
+
       <Outlet />
     </>
   );

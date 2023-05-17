@@ -1,0 +1,16 @@
+.navbar-inner {
+    background: rgba(0,0,0,0);
+ }
+ .brand {
+    color:white;
+}
+
+.nav-item {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.nav-item:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
+    text-decoration: underline;
+}
