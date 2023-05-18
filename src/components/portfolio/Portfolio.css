@@ -7,3 +7,14 @@
     opacity: 0.9;
     cursor: pointer
 }
+
+.text-overlay {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
