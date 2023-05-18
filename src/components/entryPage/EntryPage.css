@@ -3,6 +3,8 @@
   font-size: 4.5rem;
   color: rgb(248, 233, 233);
   transform: scale(1);
+  /* -webkit-text-stroke: 1px rgba(0, 0, 0, 0.404); */
+
   transition: ease-out 1s;
 }
 
@@ -15,7 +17,8 @@
 
 
 .title {
-  
+  /* backdrop-filter: blur(2px); */
+  border-radius: 10%;
 }
 .btn {
   margin-top: 50px;
@@ -75,3 +78,6 @@
   }
 }
 
+.entryImg.hovered {
+  filter: brightness(30%);
+}
