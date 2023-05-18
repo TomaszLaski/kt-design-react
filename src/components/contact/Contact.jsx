@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../layout/Layout';
 import './Contact.css'
 
+
 const Contact = () => {
+  const [inputs,setInputs] = useState({});
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(inputs, textarea)
   };
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+
+  }
 
   return (
     <Layout>
@@ -24,15 +35,15 @@ const Contact = () => {
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email">Email</label>
-            <input id="email" type="text" />
+            <input value= {inputs.email || ''} onChange={handleChange} name="email" type="text" />
           </div>
           <div>
             <label htmlFor="password">Phone</label>
-            <input id="phone" type="text" />
+            <input value= {inputs.phone || ''} onChange={handleChange} name="phone" type="text" />
           </div>
           <div>
             <label htmlFor="message">Leave a Message</label>
-            <textarea ></textarea>
+            <textarea type='text' name='message' value={inputs.textarea} onChange={handleChange} ></textarea>
           </div>
           <button type="submit">Submit</button>
         </form>
