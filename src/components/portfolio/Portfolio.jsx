@@ -22,6 +22,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 2,
@@ -31,6 +32,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 3,
@@ -40,6 +42,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 4,
@@ -49,6 +52,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 5,
@@ -58,6 +62,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 6,
@@ -67,6 +72,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 7,
@@ -76,6 +82,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 8,
@@ -85,6 +92,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 	];
 	const handleMouseEnter = (imageId) => {
@@ -100,12 +108,19 @@ function Portfolio() {
 			<img
 				onMouseEnter={() => handleMouseEnter(image.id)}
 				onMouseLeave={handleMouseLeave}
-        className={`entryImg ${hoveredImages.includes(image.id) ? 'hovered' : ''}`}
+				className={`entryImg ${
+					hoveredImages.includes(image.id) ? 'hovered' : ''
+				}`}
 				src={
 					hoveredImages.includes(image.id) ? image.images.img1 : image.project
 				}
 				onClick={() => setOpen(true)}
 			/>
+			{hoveredImages.includes(image.id)&& (
+				<div className='text-overlay'>
+					<span>{image.text}</span>
+				</div>
+			)}
 		</Col>
 	));
 
