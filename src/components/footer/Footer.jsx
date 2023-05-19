@@ -3,8 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './Footer.css'
-
 import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai';
+
 function Footer() {
     const [isContentEmpty, setIsContentEmpty] = useState(false);
 

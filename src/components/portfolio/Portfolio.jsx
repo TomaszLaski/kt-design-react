@@ -22,8 +22,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
-			text: 'Image 1',
-			
+			text: 'text',
 		},
 		{
 			id: 2,
@@ -33,6 +32,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 3,
@@ -42,6 +42,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 4,
@@ -51,6 +52,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 5,
@@ -60,6 +62,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 6,
@@ -69,6 +72,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 7,
@@ -78,6 +82,7 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 		{
 			id: 8,
@@ -87,48 +92,59 @@ function Portfolio() {
 				img2: logo2,
 				img3: logo3,
 			},
+			text: 'text',
 		},
 	];
 	const handleMouseEnter = (imageId) => {
 		setHoveredImages((prevHoveredImages) => [...prevHoveredImages, imageId]);
-	  };
-	
-	  const handleMouseLeave = () => {
+	};
+
+	const handleMouseLeave = () => {
 		setHoveredImages([]);
-	  };
-	
-	  const renderedImages = gallery.map((image) => (
-		<Col key={image.id} xs={12} md={6} lg={6}>
-		  <div
-			className="image-container"
-			onMouseEnter={() => handleMouseEnter(image.id)}
-			onMouseLeave={handleMouseLeave}
-		  >
+	};
+
+	const renderedImages = gallery.map((image) => (
+		<Col key={image.id} xs={12} md={6} lg={6} xl={4}>
 			<img
-			  className="entryImg"
-			  src={image.project}
-			  onClick={() => setOpen(true)}
+				onMouseEnter={() => handleMouseEnter(image.id)}
+				onMouseLeave={handleMouseLeave}
+				className={`entryImg ${
+					hoveredImages.includes(image.id) ? 'hovered' : ''
+				}`}
+				src={
+					hoveredImages.includes(image.id) ? image.images.img1 : image.project
+				}
+				onClick={() => setOpen(true)}
+				style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'cover', // Adjust how the image fits within the container
+        borderRadius: '8px', // Add a border radius to the image
+      }}
 			/>
-			{hoveredImages.includes(image.id) && (
-			  <div className="text-overlay">
-				<span>{image.text}</span>
-			  </div>
+			{hoveredImages.includes(image.id)&& (
+				<div className='text-overlay'>
+					<span>{image.text}</span>
+				</div>
 			)}
-		  </div>
 		</Col>
-	  ));
-	
-	  const lightboxSlides = gallery.map((image) => ({ src: image.project }));
-	
-	  return (
+	));
+
+	const lightboxSlides = gallery.map((image) => ({ src: image.images.img1 }));
+
+	return (
 		<Layout>
-		  <Container>
-			<Row>{renderedImages}</Row>
-		  </Container>
-	
-		  <Lightbox open={open} close={() => setOpen(false)} slides={lightboxSlides} />
+			<Col>
+				<Row>{renderedImages}</Row>
+			</Col>
+
+			<Lightbox
+				open={open}
+				close={() => setOpen(false)}
+				slides={lightboxSlides}
+			/>
 		</Layout>
-	  );
-	}
-	
-	export default Portfolio;
+	);
+}
+
+export default Portfolio;

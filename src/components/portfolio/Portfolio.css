@@ -2,10 +2,13 @@
     padding-top: 5px;
     height: auto;
     max-width: 100%;
+    
 }
 .entryImg:hover {
     opacity: 0.9;
-    cursor: pointer
+    cursor: pointer;
+    transition: 0.5s;
+    
 }
 
 .text-overlay {
