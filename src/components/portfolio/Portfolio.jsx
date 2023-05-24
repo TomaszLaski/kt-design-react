@@ -139,7 +139,7 @@ function Portfolio() {
 
 	return (
 		<Layout>
-			<Col>
+			<Col className='gallery'>
 				<Row>{renderedImages}</Row>
 			</Col>
 

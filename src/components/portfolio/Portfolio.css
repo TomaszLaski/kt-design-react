@@ -11,6 +11,9 @@
     transition: 0.5s;
     
 }
+.gallery {
+    margin-top: 100px;
+}
 
 .text-overlay {
     position: absolute;

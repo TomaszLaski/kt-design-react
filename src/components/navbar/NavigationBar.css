@@ -1,5 +1,11 @@
 .navbar-inner {
     background: rgba(0,0,0,0);
+    /* position: absolute;
+    width:100%; */
+ }
+ .navbar-contact {
+    position: absolute;
+    width: 100%;
  }
  .brand {
     color:white;

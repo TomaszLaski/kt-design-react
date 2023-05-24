@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../layout/Layout';
-import './Contact.css'
+import './Contact.css';
+import contactImg from '../../assets/KtDesign.jpg'
 
 
 const Contact = () => {
@@ -22,11 +23,12 @@ const Contact = () => {
   return (
     <Layout>
     	<div className="contactContainer">
+        <img className='contactImg' src={contactImg} />
 				<div className="contact">
-					<h1>Contact</h1>
-					<p>Phone: 123456</p>
+					<h1>GIVE ME A SHOUT</h1>
+					{/* <p>Phone: 123456</p>
           <p>Email: </p>
-          <p>Social media:</p>
+          <p>Social media:</p> */}
 				</div>
 			</div>
 

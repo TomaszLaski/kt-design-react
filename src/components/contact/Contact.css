@@ -1,63 +1,77 @@
 .contactContainer {
-    padding-top: 50px;
-    max-width: 1000px;
-    margin: 0 auto;
-    
-  }
-  .contact {
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
-    text-align:center;
-    font-family: 'Caveat';
-    font-size: 1.5rem;
-  }
+  position: relative;
+  width: 100%;
+  z-index: -1;
+}
+.contactImg {
+  width: 100%;
+  
+}
+
+.contactHeading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.contact {
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: center;
+  font-family: "Caveat";
+  font-size: 1.5rem;
+ 
+}
 .form-container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
 
-  .form-container label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
 
-  .form-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
 
-  .form-container button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    background-color: #b9bbb9;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.form-container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #b9bbb9;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-  .form-container button:hover {
-    background-color: #021303;
-  }
-  textarea
-{
-  width:100%;
+.form-container button:hover {
+  background-color: #021303;
+}
+textarea {
+  width: 100%;
 }
 
 @media (min-width: 800px) {
-    .container {
-      display: flex;
-      align-items: center;
-    }
+  .container {
+    display: flex;
+    align-items: center;
+  }
 }
