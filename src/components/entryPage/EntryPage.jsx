@@ -7,7 +7,7 @@ const EntryPage = () => {
 
 	const navigate = useNavigate();
 
-	const handleClick = async (e) => {
+	const handleClick = (e) => {
 		e.preventDefault();
 		setAnimateBackground(true);
 
@@ -33,7 +33,6 @@ const EntryPage = () => {
 						</button>
 					</div>
 					<div className='col-lg-6 button'>
-					
 					</div>
 				</div>
 			</div>

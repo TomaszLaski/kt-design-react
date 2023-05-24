@@ -3,6 +3,7 @@
     height: auto;
     max-width: 100%;
     
+    
 }
 .entryImg:hover {
     opacity: 0.9;
@@ -16,7 +17,7 @@
     top: 80%;
     left: 20%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color:transparent;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
