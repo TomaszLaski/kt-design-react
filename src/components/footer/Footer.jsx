@@ -6,30 +6,31 @@ import './Footer.css'
 import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai';
 
 function Footer() {
-    const [isContentEmpty, setIsContentEmpty] = useState(false);
+    // const [isContentEmpty, setIsContentEmpty] = useState(false);
 
-    useEffect(() => {
-        const isContentEmpty = checkIfContentIsEmpty();
-        setIsContentEmpty(isContentEmpty);
+    // useEffect(() => {
+    //     const isContentEmpty = checkIfContentIsEmpty();
+    //     setIsContentEmpty(isContentEmpty);
         
-        window.addEventListener('resize', handleContentChange);
+    //     window.addEventListener('resize', handleContentChange);
 
-        return () => {
-            window.removeEventListener('resize', handleContentChange);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('resize', handleContentChange);
+    //     };
+    // }, []);
 
-    const handleContentChange = () => {
-        const isContentEmpty = checkIfContentIsEmpty();
-        setIsContentEmpty(isContentEmpty);
-    };
+    // const handleContentChange = () => {
+    //     const isContentEmpty = checkIfContentIsEmpty();
+    //     setIsContentEmpty(isContentEmpty);
+    // };
 
-    const checkIfContentIsEmpty = () => {
-        return document.body.scrollHeight <= window.innerHeight;
-    };
+    // const checkIfContentIsEmpty = () => {
+    //     return document.body.scrollHeight <= window.innerHeight;
+    // };
+    // fixed={isContentEmpty ? 'bottom' : ''}
     return (
         <>
-            <Navbar className='footer' fixed={isContentEmpty ? 'bottom' : ''} bg = '' variant="light">
+            <Navbar className='footer' bg = '' variant="light">
                 <Container>
 
                     <Navbar.Brand href="#home"><p className='copyright'>Copyright 2023 KT</p></Navbar.Brand>

@@ -5,9 +5,9 @@ import './Animation.css'
 const Animation = () => {
   return (
     <Layout>
-    <div className='player'>
+    {/* <div className='player'>
       <ReactPlayer url='<https://www.youtube.com/watch?v=ysz5S6PUM-U>' controls={true} />
-    </div>
+    </div> */}
     </Layout>
   );
 };

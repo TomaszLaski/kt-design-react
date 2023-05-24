@@ -1,15 +1,17 @@
-import React, { PropsWithChildren } from 'react'
-import NavigationBar from '../navbar/NavigationBar'
+import React from 'react';
+import NavigationBar from '../navbar/NavigationBar';
 import Footer from '../footer/Footer';
 
 function Layout({ children }) {
   return (
-    <>
-        <NavigationBar />
-        <div>{children}</div>
-        <Footer />
-    </>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <NavigationBar />
+      <div style={{ flex: '1' }}>
+        {children}
+      </div>
+      <Footer />
+    </div>
   );
-};
+}
 
 export default Layout;
