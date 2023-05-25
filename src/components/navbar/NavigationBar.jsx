@@ -18,7 +18,7 @@ const NavigationBar = () => {
 
   const renderedLinks = links.map((link) => {
     return <Link key={link.label} className="nav-link mr-4" to={link.path}>
-      <li className='nav-item'>{link.label}</li>
+      <li className={`navbar-item ${isContactPage ? 'navbar-item-contact'  : ''}`}>{link.label}</li>
     </Link>
   });
   return (

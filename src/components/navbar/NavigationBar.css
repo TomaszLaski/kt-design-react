@@ -6,6 +6,7 @@
  .navbar-contact {
     position: absolute;
     width: 100%;
+    
  }
  .brand {
     color:white;
@@ -16,8 +17,16 @@
 .nav-item {
    
 }
-
-.nav-item:hover {
+.navbar-item:hover {
     transition: 0.5s;
     transform: scale(1.2);
 }
+
+.navbar-item-contact {
+    color: white;
+}
+.navbar-item-contact:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+

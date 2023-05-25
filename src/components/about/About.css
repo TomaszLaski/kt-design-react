@@ -10,62 +10,67 @@
     font-size: 4rem;
 } */
 body {
-    background: rgb(102,100,100);
-    background: linear-gradient(90deg, rgba(102,100,100,1) 0%, rgba(213,209,209,1) 22%, rgba(250,254,255,1) 100%);
+  background: rgb(102, 100, 100);
+  background: linear-gradient(
+    90deg,
+    rgba(102, 100, 100, 1) 0%,
+    rgba(213, 209, 209, 1) 22%,
+    rgba(250, 254, 255, 1) 100%
+  );
 }
 h1 {
-    text-align: center;
-    padding-bottom: 20px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 .container {
-    padding-top: 100px;
-    max-width: 1000px;
-    margin: 0 auto;
+  padding-top: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-image {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px #4e4d4d, 0px 0px 0px #050505, 0px 0px 0px #080808;
+}
+
+.bio {
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: justify;
+  font-family: "Caveat";
+  font-size: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .container {
+    display: flex;
+    align-items: center;
   }
-  
+
   .profile-image {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 50%;
-    
+    margin-right: 20px;
   }
-  
-  .bio {
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
-    text-align:justify;
-    font-family: 'Caveat';
-    font-size: 1.5rem;
-  }
-  
-  @media (min-width: 800px) {
-    .container {
-      display: flex;
-      align-items: center;
-    }
-  
-    .profile-image {
-      margin-right: 20px;
-    }
-  }
+}
 .name {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 .section {
-    width: 50%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 50px;
-    padding: -1px;
-    background-color: #f5f5f5;
-    border: 1px solid #999;
-  }
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: -1px;
+  background-color: #f5f5f5;
+  border: 1px solid #999;
+}
 @media screen and (max-width: 992px) {
-    .name {
-        font-size: 2rem;
-    }
+  .name {
+    font-size: 2rem;
+  }
 }
