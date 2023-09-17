@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faBehance,
+	faFacebook,
+	faInstagram,
+	faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
+
 import './EntryPage.css';
 
 const EntryPage = () => {
@@ -12,27 +20,52 @@ const EntryPage = () => {
 		setAnimateBackground(true);
 
 		setTimeout(() => {
-			navigate('/about');
-		}, 2000);
+			navigate('/portfolio');
+		}, 500);
 	};
 
 	return (
-
 		<section id='entryPage'>
-			<div className={`background-image${animateBackground ? ' zoom-animation' : ''}`} />
-			<div className='container'>
-				<div className='row'>
-					<div className='col-lg-6 title'>
-						<h1 onClick={handleClick} className='Title'>Welcome to KT Design Studio</h1>
-						<button
-							type='button'
-							className='btn'
-							onClick={handleClick}
+			<div className='left-side'>
+				<div
+					className={`background-image${
+						animateBackground ? ' zoom-animation' : ''
+					}`}
+				/>
+			</div>
+			<div className='right-side'>
+				<div className='title'>
+					<h1 onClick={handleClick} className='Title'>
+						KT Design Studio
+					</h1>
+					<button type='button' className='btn' onClick={handleClick}>
+						Enter
+					</button>
+					<div className='social-icons'>
+						<a
+							href='https://www.behance.net/klaudiatarkows1'
+							className='icon'
+							target='_blank'
+							rel='noopener noreferrer'
 						>
-							Enter
-						</button>
-					</div>
-					<div className='col-lg-6 button'>
+							<FontAwesomeIcon icon={faBehance} />
+						</a>
+						<a
+							href='https://www.instagram.com/kt_studioo/'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='icon'
+						>
+							<FontAwesomeIcon icon={faInstagram} />
+						</a>
+						<a
+							href='https://www.linkedin.com/in/klaudia-tarkowska-892502210/'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='icon'
+						>
+							<FontAwesomeIcon icon={faLinkedin} />
+						</a>
 					</div>
 				</div>
 			</div>

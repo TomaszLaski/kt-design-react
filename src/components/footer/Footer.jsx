@@ -6,28 +6,6 @@ import './Footer.css'
 import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai';
 
 function Footer() {
-    // const [isContentEmpty, setIsContentEmpty] = useState(false);
-
-    // useEffect(() => {
-    //     const isContentEmpty = checkIfContentIsEmpty();
-    //     setIsContentEmpty(isContentEmpty);
-        
-    //     window.addEventListener('resize', handleContentChange);
-
-    //     return () => {
-    //         window.removeEventListener('resize', handleContentChange);
-    //     };
-    // }, []);
-
-    // const handleContentChange = () => {
-    //     const isContentEmpty = checkIfContentIsEmpty();
-    //     setIsContentEmpty(isContentEmpty);
-    // };
-
-    // const checkIfContentIsEmpty = () => {
-    //     return document.body.scrollHeight <= window.innerHeight;
-    // };
-    // fixed={isContentEmpty ? 'bottom' : ''}
     return (
         <>
             <Navbar className='footer' bg = '' variant="light">

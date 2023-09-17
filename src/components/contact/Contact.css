@@ -8,6 +8,8 @@
   height: 60vh;
   box-shadow: 2px 2px 5px #050505, 0px 0px 0px #050505, 0px 0px 0px #080808;
   border-radius: 4px;
+  object-fit: cover; 
+  object-position: center top; 
 }
 
 
@@ -20,7 +22,7 @@
   margin-left: 40px;
   margin-right: 40px;
   text-align: center;
-  font-family: "Caveat";
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 1.5rem;
  
 }

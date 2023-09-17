@@ -1,100 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-import dom from './../../assets/dom.jpg';
-import logo from './../../assets/img1.jpg';
-import logo2 from './../../assets/KtDesign.jpg';
-import logo3 from './../../assets/Myself.jpg';
 import './Portfolio.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Layout from '../layout/Layout';
 
 function Portfolio() {
 	const [open, setOpen] = useState(false);
+	const [activeImages, setActiveImages] = useState([]);
 	const [hoveredImages, setHoveredImages] = useState([]);
+	const [gallery, setGallery] = useState([]);
 
-	const gallery = [
-		{
-			id: 1,
-			project: dom,
-			images: {
-				img1: logo,
-				img2: logo2,
-				img3: logo3,
-			},
-			text: 'text',
-		},
-		{
-			id: 2,
-			project: dom,
-			images: {
-				img1: logo,
-				img2: logo2,
-				img3: logo3,
-			},
-			text: 'text',
-		},
-		{
-			id: 3,
-			project: dom,
-			images: {
-				img1: logo,
-				img2: logo2,
-				img3: logo3,
-			},
-			text: 'text',
-		},
-		{
-			id: 4,
-			project: dom,
-			images: {
-				img1: logo,
-				img2: logo2,
-				img3: logo3,
-			},
-			text: 'text',
-		},
-		{
-			id: 5,
-			project: dom,
-			images: {
-				img1: logo,
-				img2: logo2,
-				img3: logo3,
-			},
-			text: 'text',
-		},
-		{
-			id: 6,
-			project: dom,
-			images: {
-				img1: logo,
-				img2: logo2,
-				img3: logo3,
-			},
-			text: 'text',
-		},
-		{
-			id: 7,
-			project: dom,
-			images: {
-				img1: logo,
-				img2: logo2,
-				img3: logo3,
-			},
-			text: 'text',
-		},
-		{
-			id: 8,
-			project: dom,
-			images: {
-				img1: logo,
-				img2: logo2,
-				img3: logo3,
-			},
-			text: 'text',
-		},
-	];
+	useEffect(() => {
+		fetch('http://localhost:3001/api/images')
+			.then((res) => res.json())
+			.then((data) => setGallery(data))
+			.catch((error) => console.error('Error fetching images:', error));
+	}, []);
+
 	const handleMouseEnter = (imageId) => {
 		if (!hoveredImages.includes(imageId)) {
 			setHoveredImages((prevHoveredImages) => [...prevHoveredImages, imageId]);
@@ -105,44 +28,63 @@ function Portfolio() {
 		setHoveredImages([]);
 	};
 
+	const handleImageClick = (folder, id) => {
+		if (open) {
+			setOpen(false);
+		}
+
+		const image = gallery.find((img) => img.id === id && img.folder === folder);
+
+		if (!image) return;
+
+		const combinedImages = [];
+
+		combinedImages.push({ src: image.main });
+
+		if (image.second) {
+			combinedImages.push({ src: image.second });
+		}
+
+		setActiveImages(combinedImages);
+		setOpen(true);
+	};
+
 	const renderedImages = gallery.map((image) => (
-		<Col key={image.id} xs={12} md={6} lg={6} xl={4}>
+		<Col key={image.id} xs={12} md={6} lg={4}>
 			<div
-				className="image-container"
-				onMouseEnter={() => handleMouseEnter(image.id)}
-				onMouseLeave={handleMouseLeave}
+				className='image-container'
+				onMouseEnter={() => image.second && handleMouseEnter(image.id)}
+				onMouseLeave={() => image.second && handleMouseLeave()}
 			>
 				<img
-					className={`entryImg ${hoveredImages.includes(image.id) ? 'hovered' : ''
-						}`}
+					className={`entryImg ${
+						image.second && hoveredImages.includes(image.id) ? 'hovered' : ''
+					}`}
 					src={
-						hoveredImages.includes(image.id) ? image.images.img1 : image.project
+						image.second && hoveredImages.includes(image.id)
+							? image.second
+							: image.main
 					}
-					onClick={() => setOpen(true)}
+					onClick={() => handleImageClick(image.folder, image.id)}
+					alt='Gallery image'
 					style={{
 						width: '100%',
-						height: 'auto',
+						aspectRatio: '4 / 3',
 						objectFit: 'cover',
 						borderRadius: '8px',
 					}}
 				/>
-				{hoveredImages.includes(image.id) && (
-					<div className="text-overlay">
-						<span>{image.text}</span>
-					</div>
-				)}
 			</div>
 		</Col>
 	));
 
-	const lightboxSlides = gallery.map((image) => ({ src: image.images.img1 }));
+	const lightboxSlides = activeImages.map((image) => image);
 
 	return (
 		<Layout>
 			<Col className='gallery'>
 				<Row>{renderedImages}</Row>
 			</Col>
-
 			<Lightbox
 				open={open}
 				close={() => setOpen(false)}

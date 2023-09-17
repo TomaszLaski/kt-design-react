@@ -10,9 +10,7 @@ const NavigationBar = () => {
   const isContactPage = location.pathname === '/contact';
 
   const links = [
-    { label: 'About', path: '/about' },
     { label: 'Portfolio', path: '/portfolio' },
-    { label: 'Animation', path: '/animation' },
     { label: 'Contact', path: '/contact' }
   ]
 
