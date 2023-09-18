@@ -5,28 +5,79 @@ import './Portfolio.css';
 import { Row, Col } from 'react-bootstrap';
 import Layout from '../layout/Layout';
 
+import multiple1_main from '../../../src/assets/1/main.jpg';
+import multiple1_second from '../../../src/assets//1/second.jpg';
+import multiple2_main from '../../../src/assets//2/main.jpg';
+import multiple2_second from '../../../src/assets//2/second.jpg';
+import multiple3_main from '../../../src/assets//3/main.jpg';
+import multiple3_second from '../../../src/assets//3/second.jpg';
+import multiple4_main from '../../../src/assets//4/main.jpg';
+import multiple4_second from '../../../src/assets//4/second.jpg';
+import multiple5_main from '../../../src/assets//5/main.jpg';
+import multiple5_second from '../../../src/assets//5/second.jpg';
+
+import single1 from '../../../src/assets//single/1.jpg';
+import single2 from '../../../src/assets//single/2.jpg';
+import single3 from '../../../src/assets//single/3.jpg';
+import single4 from '../../../src/assets//single/4.jpg';
+import single5 from '../../../src/assets//single/5.jpg';
+import single6 from '../../../src/assets//single/6.jpg';
+import single7 from '../../../src/assets//single/7.jpg';
+import single8 from '../../../src/assets//single/8.jpg';
+import single9 from '../../../src/assets//single/9.jpg';
+import single10 from '../../../src/assets//single/10.jpg';
+import single11 from '../../../src/assets//single/11.jpg';
+
 function Portfolio() {
 	const [open, setOpen] = useState(false);
 	const [activeImages, setActiveImages] = useState([]);
 	const [hoveredImages, setHoveredImages] = useState([]);
-	const gallery = [];
-	for (let i = 1; i <= 5; i++) {
-		gallery.push({
-			id: i,
-			main: `src/assets/${i}/main.jpg`,
-			second: `src/assets/${i}/second.jpg`,
+	const gallery = [
+		// Multiple images
+		{
+			id: 1,
+			main: multiple1_main,
+			second: multiple1_second,
 			folder: 'multiple',
-		});
-	}
+		},
+		{
+			id: 2,
+			main: multiple2_main,
+			second: multiple2_second,
+			folder: 'multiple',
+		},
+		{
+			id: 3,
+			main: multiple3_main,
+			second: multiple3_second,
+			folder: 'multiple',
+		},
+		{
+			id: 4,
+			main: multiple4_main,
+			second: multiple4_second,
+			folder: 'multiple',
+		},
+		{
+			id: 5,
+			main: multiple5_main,
+			second: multiple5_second,
+			folder: 'multiple',
+		},
 
-	for (let i = 1; i <= 11; i++) {
-		gallery.push({
-			id: i + 6,
-			main: `src/assets/single/${i}.jpg`,
-			second: null,
-			folder: 'single',
-		});
-	}
+		// Single images
+		{ id: 7, main: single1, second: null, folder: 'single' },
+		{ id: 8, main: single2, second: null, folder: 'single' },
+		{ id: 9, main: single3, second: null, folder: 'single' },
+		{ id: 10, main: single4, second: null, folder: 'single' },
+		{ id: 11, main: single5, second: null, folder: 'single' },
+		{ id: 12, main: single6, second: null, folder: 'single' },
+		{ id: 13, main: single7, second: null, folder: 'single' },
+		{ id: 14, main: single8, second: null, folder: 'single' },
+		{ id: 15, main: single9, second: null, folder: 'single' },
+		{ id: 16, main: single10, second: null, folder: 'single' },
+		{ id: 17, main: single11, second: null, folder: 'single' },
+	];
 	const handleMouseEnter = (imageId) => {
 		if (!hoveredImages.includes(imageId)) {
 			setHoveredImages((prevHoveredImages) => [...prevHoveredImages, imageId]);
