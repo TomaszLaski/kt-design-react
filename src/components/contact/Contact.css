@@ -75,3 +75,21 @@ textarea {
     align-items: center;
   }
 }
+.contactAndFormContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Dodane, żeby sekcje były wyśrodkowane w pionie */
+}
+
+.contactAndFormSection {
+  flex: 1;
+  padding: 0 20px; /* Opcjonalne */
+}
+.form-container {
+  max-width: 70%;
+  margin: 2rem auto 0 auto; /* Obniżono formularz o 2 rem */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
