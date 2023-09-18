@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import './Portfolio.css';
@@ -9,15 +9,24 @@ function Portfolio() {
 	const [open, setOpen] = useState(false);
 	const [activeImages, setActiveImages] = useState([]);
 	const [hoveredImages, setHoveredImages] = useState([]);
-	const [gallery, setGallery] = useState([]);
+	const gallery = [];
+	for (let i = 1; i <= 5; i++) {
+		gallery.push({
+			id: i,
+			main: `src/assets/${i}/main.jpg`,
+			second: `src/assets/${i}/second.jpg`,
+			folder: 'multiple',
+		});
+	}
 
-	useEffect(() => {
-		fetch('http://localhost:3001/api/images')
-			.then((res) => res.json())
-			.then((data) => setGallery(data))
-			.catch((error) => console.error('Error fetching images:', error));
-	}, []);
-
+	for (let i = 1; i <= 11; i++) {
+		gallery.push({
+			id: i + 6,
+			main: `src/assets/single/${i}.jpg`,
+			second: null,
+			folder: 'single',
+		});
+	}
 	const handleMouseEnter = (imageId) => {
 		if (!hoveredImages.includes(imageId)) {
 			setHoveredImages((prevHoveredImages) => [...prevHoveredImages, imageId]);

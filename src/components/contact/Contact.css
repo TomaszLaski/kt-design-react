@@ -12,7 +12,6 @@
   object-position: center top; 
 }
 
-
 .contactH1 {
   margin-top: 50px;
 }
@@ -24,8 +23,8 @@
   text-align: center;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 1.5rem;
- 
 }
+
 .form-container {
   max-width: 70%;
   margin: 0 auto;
@@ -78,16 +77,15 @@ textarea {
 .contactAndFormContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Dodane, żeby sekcje były wyśrodkowane w pionie */
 }
 
 .contactAndFormSection {
   flex: 1;
-  padding: 0 20px; /* Opcjonalne */
+  padding: 0 20px;
 }
 .form-container {
   max-width: 70%;
-  margin: 2rem auto 0 auto; /* Obniżono formularz o 2 rem */
+  margin: 2rem auto 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;

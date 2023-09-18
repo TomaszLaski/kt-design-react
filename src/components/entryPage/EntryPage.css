@@ -8,23 +8,24 @@
   border-radius: 10%;
 }
 .btn {
-  margin-top: 50px;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  color: white;
+  color: white; 
   font-size: 2rem;
-  border: darkblue;
+  border: 2px solid white;
+  background-color: black;  
+  border-radius: 0;  
+  cursor: pointer;  
+}
 
-}
-.btn:hover {
-  transform: scale(1.2);
-}
 .Title,
 .btn,
 .social-icons {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-
+.btn:hover {
+  color: rgb(185, 152, 108); 
+}
 
 #entryPage {
   display: flex;
@@ -86,7 +87,6 @@
 }
 
 .right-side .Title,
-.right-side .btn,
 .right-side .icon {
   color: black; 
 }

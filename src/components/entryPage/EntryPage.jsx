@@ -3,7 +3,6 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faBehance,
-	faFacebook,
 	faInstagram,
 	faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
