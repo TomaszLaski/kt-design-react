@@ -1,24 +1,70 @@
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faBehance,
+	faInstagram,
+	faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
+
 import './EntryPage.css';
-import dom from '../../assets/dom.jpg';
 
 const EntryPage = () => {
+	const [animateBackground, setAnimateBackground] = useState(false);
+
+	const navigate = useNavigate();
+
+	const handleClick = (e) => {
+		e.preventDefault();
+		setAnimateBackground(true);
+
+		setTimeout(() => {
+			navigate('/portfolio');
+		}, 500);
+	};
+
 	return (
 		<section id='entryPage'>
-			<div className='container'>
-				<div className='row'>
-					<div className='col-lg-6 entry-page'>
-						<p className='logo'>Logo</p>
-						<h1>KT Studio</h1>
-						<Link to='/about'>
-							<button type='button' className='btn btn-lg btn-outline-dark'>
-								Enter
-							</button>
-						</Link>
-					</div>
-					<div className='col-lg-6 entry-page'>
-						<img src={dom} className='entryImg' />
+			<div className='left-side'>
+				<div
+					className={`background-image${
+						animateBackground ? ' zoom-animation' : ''
+					}`}
+				/>
+			</div>
+			<div className='right-side'>
+				<div className='title'>
+					<h1 onClick={handleClick} className='Title'>
+						KT Design Studio
+					</h1>
+					<button type='button' className='btn' onClick={handleClick}>
+						Enter
+					</button>
+					<div className='social-icons'>
+						<a
+							href='https://www.behance.net/klaudiatarkows1'
+							className='icon'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<FontAwesomeIcon icon={faBehance} />
+						</a>
+						<a
+							href='https://www.instagram.com/kt_studioo/'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='icon'
+						>
+							<FontAwesomeIcon icon={faInstagram} />
+						</a>
+						<a
+							href='https://www.linkedin.com/in/klaudia-tarkowska-892502210/'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='icon'
+						>
+							<FontAwesomeIcon icon={faLinkedin} />
+						</a>
 					</div>
 				</div>
 			</div>

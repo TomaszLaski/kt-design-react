@@ -1,0 +1,27 @@
+.entryImg {
+    padding-top: 5px;
+    height: auto;
+    max-width: 100%;
+    
+    
+}
+.entryImg:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
+.gallery {
+    margin-top: 5px;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background-color:transparent;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }

@@ -1,0 +1,32 @@
+.navbar-inner {
+    background: rgba(0,0,0,0);
+    /* position: absolute;
+    width:100%; */
+ }
+ .navbar-contact {
+    position: absolute;
+    width: 100%;
+    
+ }
+ .brand {
+    color: rgb(54, 54, 54);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.nav-item {
+   
+}
+.navbar-item:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+.navbar-item-contact {
+    color: rgb(54, 54, 54);
+}
+.navbar-item-contact:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
