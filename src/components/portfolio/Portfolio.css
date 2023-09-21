@@ -2,7 +2,7 @@
     padding-top: 5px;
     height: auto;
     max-width: 100%;
-    
+    border-radius: 0 !important;
     
 }
 .entryImg:hover {
@@ -12,16 +12,6 @@
     
 }
 .gallery {
+    
     margin-top: 5px;
 }
-
-.text-overlay {
-    position: absolute;
-    top: 80%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    background-color:transparent;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-  }

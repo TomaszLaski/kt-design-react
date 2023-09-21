@@ -2,8 +2,13 @@
   position: relative;
   width: 100%;
   z-index: -1;
+  margin: 0;
+  padding: 0;
+  transition: margin-top 0.3s ease-in-out;
+
 }
 .contactImg {
+  
   width: 100%;
   height: 60vh;
   box-shadow: 2px 2px 5px #050505, 0px 0px 0px #050505, 0px 0px 0px #080808;

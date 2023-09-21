@@ -35,7 +35,7 @@ const EntryPage = () => {
 			<div className='right-side'>
 				<div className='title'>
 					<h1 onClick={handleClick} className='Title'>
-						KT Design Studio
+						VIZCO
 					</h1>
 					<button type='button' className='btn' onClick={handleClick}>
 						Enter

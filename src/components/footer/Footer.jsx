@@ -14,11 +14,11 @@ function Footer() {
 	return (
 		<>
 			<Navbar className='footer' bg='' variant='light'>
-				<Container>
+				<Container className='custom-nav'>
 					<Navbar.Brand href='#home'>
-						<p className='copyright'>Copyright 2023 KT</p>
+						<p className='copyright'>Copyright 2023 VIZCO</p>
 					</Navbar.Brand>
-					<Nav className='me-auto'>
+					<Nav className='me-auto custom-nav-container'>
 						<Nav.Link
 							href='https://www.behance.net/klaudiatarkows1'
 							className='icon'

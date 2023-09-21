@@ -90,3 +90,27 @@
 .right-side .icon {
   color: black; 
 }
+
+@media (max-width: 768px) {
+  #entryPage {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    position: relative;
+    width: 100%;
+    height: 50vh; 
+  }
+
+  .background-image {
+    position: relative;
+  }
+
+  .right-side {
+    justify-content: flex-end;
+  }
+  .Title {
+    margin: 4rem 0 0 0;
+  }
+}

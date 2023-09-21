@@ -2,10 +2,39 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../layout/Layout';
 import './Contact.css';
 import contactImg from '../../assets/contactImg.jpg';
+import { Container } from 'react-bootstrap';
 
 const Contact = () => {
 	const [inputs, setInputs] = useState({});
+	const [navbarHeight, setNavbarHeight] = useState(0);
 
+	useEffect(() => {
+		const navbar = document.getElementById('navbar');
+
+		if (navbar) {
+			// Funkcja aktualizująca wysokość Navbara
+			const updateNavbarHeight = () => {
+				const heightInPixels = navbar.offsetHeight;
+				setNavbarHeight(heightInPixels);
+			};
+
+			// Tworzenie obserwatora zmian
+			const observer = new MutationObserver(updateNavbarHeight);
+
+			// Rozpoczęcie obserwacji
+			observer.observe(navbar, {
+				attributes: true,
+				childList: true,
+				subtree: true,
+				attributeFilter: ['style', 'class'],
+			});
+			updateNavbarHeight();
+
+			return () => {
+				observer.disconnect();
+			};
+		}
+	}, []);
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(inputs);
@@ -19,7 +48,10 @@ const Contact = () => {
 
 	return (
 		<Layout>
-			<div className='contactContainer'>
+			<div
+				className='contactContainer'
+				style={{ marginTop: `${navbarHeight}px` }}
+			>
 				<img className='contactImg' src={contactImg} alt='Contact' />
 			</div>
 
