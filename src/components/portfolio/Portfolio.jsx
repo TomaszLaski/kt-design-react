@@ -4,6 +4,7 @@ import 'yet-another-react-lightbox/styles.css';
 import './Portfolio.css';
 import { Row, Col } from 'react-bootstrap';
 import Layout from '../layout/Layout';
+import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
 
 import multiple1_main from '../../../src/assets/1/main.jpg';
 import multiple1_second from '../../../src/assets//1/second.jpg';
@@ -29,11 +30,7 @@ import single10 from '../../../src/assets//single/10.jpg';
 import single11 from '../../../src/assets//single/11.jpg';
 
 function Portfolio() {
-	const [open, setOpen] = useState(false);
-	const [activeImages, setActiveImages] = useState([]);
-	const [hoveredImages, setHoveredImages] = useState([]);
 	const gallery = [
-		// Multiple images
 		{
 			id: 1,
 			main: multiple1_main,
@@ -65,7 +62,6 @@ function Portfolio() {
 			folder: 'multiple',
 		},
 
-		// Single images
 		{ id: 7, main: single1, second: null, folder: 'single' },
 		{ id: 8, main: single2, second: null, folder: 'single' },
 		{ id: 9, main: single3, second: null, folder: 'single' },
@@ -78,54 +74,14 @@ function Portfolio() {
 		{ id: 16, main: single10, second: null, folder: 'single' },
 		{ id: 17, main: single11, second: null, folder: 'single' },
 	];
-	const handleMouseEnter = (imageId) => {
-		if (!hoveredImages.includes(imageId)) {
-			setHoveredImages((prevHoveredImages) => [...prevHoveredImages, imageId]);
-		}
-	};
-
-	const handleMouseLeave = () => {
-		setHoveredImages([]);
-	};
-
-	const handleImageClick = (folder, id) => {
-		if (open) {
-			setOpen(false);
-		}
-
-		const image = gallery.find((img) => img.id === id && img.folder === folder);
-
-		if (!image) return;
-
-		const combinedImages = [];
-
-		combinedImages.push({ src: image.main });
-
-		if (image.second) {
-			combinedImages.push({ src: image.second });
-		}
-
-		setActiveImages(combinedImages);
-		setOpen(true);
-	};
 
 	const renderedImages = gallery.map((image) => (
 		<Col key={image.id} xs={12} md={6} lg={4}>
-			<div
-				className='image-container'
-				onMouseEnter={() => image.second && handleMouseEnter(image.id)}
-				onMouseLeave={() => image.second && handleMouseLeave()}
-			>
-				<img
-					className={`entryImg ${
-						image.second && hoveredImages.includes(image.id) ? 'hovered' : ''
-					}`}
-					src={
-						image.second && hoveredImages.includes(image.id)
-							? image.second
-							: image.main
-					}
-					onClick={() => handleImageClick(image.folder, image.id)}
+			<Card className='image-container'>
+				<CardBody>
+				<Image
+					className={`entryImg ${image.second ? 'hovered' : ''}`}
+					src={image.second ? image.second : image.main}
 					alt='Gallery image'
 					style={{
 						width: '100%',
@@ -134,22 +90,16 @@ function Portfolio() {
 						borderRadius: '8px',
 					}}
 				/>
-			</div>
+				</CardBody>
+			</Card>
 		</Col>
 	));
-
-	const lightboxSlides = activeImages.map((image) => image);
 
 	return (
 		<Layout>
 			<Col className='gallery'>
 				<Row>{renderedImages}</Row>
 			</Col>
-			<Lightbox
-				open={open}
-				close={() => setOpen(false)}
-				slides={lightboxSlides}
-			/>
 		</Layout>
 	);
 }
