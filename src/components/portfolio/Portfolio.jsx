@@ -76,9 +76,9 @@ function Portfolio() {
 	];
 
 	const renderedImages = gallery.map((image) => (
-		<Col key={image.id} xs={12} md={6} lg={4}>
-			<Card className='image-container'>
-				<CardBody>
+		<Col key={image.id} xs={12} md={6} lg={4} className='p-2'>
+			<Card className='image-container rounded-none p-0'>
+				<CardBody className='p-0'>
 				<Image
 					className={`entryImg ${image.second ? 'hovered' : ''}`}
 					src={image.second ? image.second : image.main}
@@ -87,7 +87,7 @@ function Portfolio() {
 						width: '100%',
 						aspectRatio: '4 / 3',
 						objectFit: 'cover',
-						borderRadius: '8px',
+						paddingTop: '0',
 					}}
 				/>
 				</CardBody>
@@ -96,11 +96,14 @@ function Portfolio() {
 	));
 
 	return (
+		/*<div className="portfolio-container" style={{ padding: '0 140px' }}>*/
+		<div className='px-5'>
 		<Layout>
-			<Col className='gallery'>
+			<Col>
 				<Row>{renderedImages}</Row>
 			</Col>
 		</Layout>
+		</div>
 	);
 }
 
