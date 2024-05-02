@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
 import './Portfolio.css';
 import { Row, Col } from 'react-bootstrap';
 import Layout from '../layout/Layout';
-import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
+import { Card, CardBody, Image } from '@nextui-org/react';
+import VisualModal from '../modal/VisualModal';
 
 import multiple1_main from '../../../src/assets/1/main.jpg';
 import multiple1_second from '../../../src/assets//1/second.jpg';
@@ -30,6 +29,8 @@ import single10 from '../../../src/assets//single/10.jpg';
 import single11 from '../../../src/assets//single/11.jpg';
 
 function Portfolio() {
+	const [modalOpen, setModalOpen] = useState(false);
+	const [selectedImage, setSelectedImage] = useState(null);
 	const gallery = [
 		{
 			id: 1,
@@ -75,21 +76,27 @@ function Portfolio() {
 		{ id: 17, main: single11, second: null, folder: 'single' },
 	];
 
+	const handleImageClick = (image) => {
+		setSelectedImage(image);
+		setModalOpen(true);
+	};
+
 	const renderedImages = gallery.map((image) => (
 		<Col key={image.id} xs={12} md={6} lg={4} className='p-2'>
 			<Card className='image-container rounded-none p-0'>
 				<CardBody className='p-0'>
-				<Image
-					className={`entryImg ${image.second ? 'hovered' : ''}`}
-					src={image.second ? image.second : image.main}
-					alt='Gallery image'
-					style={{
-						width: '100%',
-						aspectRatio: '4 / 3',
-						objectFit: 'cover',
-						paddingTop: '0',
-					}}
-				/>
+					<Image
+						onClick={() => handleImageClick(image)}
+						className={`entryImg ${image.second ? 'hovered' : ''}`}
+						src={image.second ? image.second : image.main}
+						alt='Gallery image'
+						style={{
+							width: '100%',
+							aspectRatio: '4 / 3',
+							objectFit: 'cover',
+							paddingTop: '0',
+						}}
+					/>
 				</CardBody>
 			</Card>
 		</Col>
@@ -99,6 +106,12 @@ function Portfolio() {
 		/*<div className="portfolio-container" style={{ padding: '0 140px' }}>*/
 		<div className='px-5'>
 		<Layout>
+			<VisualModal
+				isOpen={modalOpen}
+				onOpen={() => setModalOpen(true)}
+				onClose={() => setModalOpen(false)}
+				image={selectedImage}
+			/>
 			<Col>
 				<Row>{renderedImages}</Row>
 			</Col>
