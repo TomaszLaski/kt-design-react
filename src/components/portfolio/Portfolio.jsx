@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
 import './Portfolio.css';
 import { Row, Col } from 'react-bootstrap';
 import Layout from '../layout/Layout';
@@ -84,9 +82,9 @@ function Portfolio() {
 	};
 
 	const renderedImages = gallery.map((image) => (
-		<Col key={image.id} xs={12} md={6} lg={4}>
-			<Card className='image-container'>
-				<CardBody>
+		<Col key={image.id} xs={12} md={6} lg={4} className='p-2'>
+			<Card className='image-container rounded-none p-0'>
+				<CardBody className='p-0'>
 					<Image
 						onClick={() => handleImageClick(image)}
 						className={`entryImg ${image.second ? 'hovered' : ''}`}
@@ -96,7 +94,7 @@ function Portfolio() {
 							width: '100%',
 							aspectRatio: '4 / 3',
 							objectFit: 'cover',
-							borderRadius: '8px',
+							paddingTop: '0',
 						}}
 					/>
 				</CardBody>
@@ -105,17 +103,21 @@ function Portfolio() {
 	));
 
 	return (
+		/*<div className="portfolio-container" style={{ padding: '0 140px' }}>*/
+		<div className='px-5'>
 		<Layout>
 			<VisualModal
 				isOpen={modalOpen}
-				onOpen={() => setModalOpen(true)} 
+				onOpen={() => setModalOpen(true)}
 				onClose={() => setModalOpen(false)}
 				image={selectedImage}
 			/>
-			<Col className='gallery'>
+			<Col>
 				<Row>{renderedImages}</Row>
 			</Col>
 		</Layout>
+		</div>
 	);
 }
+
 export default Portfolio;
