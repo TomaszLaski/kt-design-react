@@ -104,7 +104,6 @@ function Portfolio() {
 
 	return (
 		/*<div className="portfolio-container" style={{ padding: '0 140px' }}>*/
-		<div className='px-5'>
 		<Layout>
 			<VisualModal
 				isOpen={modalOpen}
@@ -113,10 +112,11 @@ function Portfolio() {
 				image={selectedImage}
 			/>
 			<Col>
+			<div className='px-5'>
 				<Row>{renderedImages}</Row>
+		</div>
 			</Col>
 		</Layout>
-		</div>
 	);
 }
 

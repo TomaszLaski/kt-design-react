@@ -1,8 +1,18 @@
 import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
 import './NavigationBar.css';
+import {
+	Navbar,
+	NavbarBrand,
+	NavbarMenuToggle,
+	NavbarMenu,
+	NavbarMenuItem,
+	NavbarContent,
+	NavbarItem,
+	Button,
+} from '@nextui-org/react';
 
 const NavigationBar = () => {
 	const location = useLocation();
@@ -15,39 +25,26 @@ const NavigationBar = () => {
 
 	const renderedLinks = links.map((link) => {
 		return (
-			<Link key={link.label} className='nav-link mr-4' to={link.path}>
-				<li
-					className={`navbar-item ${
-						isContactPage ? 'navbar-item-contact' : ''
-					}`}
-				>
+			<NavbarItem>
+				<Link key={link.label} className='nav-link mr-4' to={link.path}>
 					{link.label}
-				</li>
-			</Link>
+				</Link>
+			</NavbarItem>
 		);
 	});
 	return (
 		<>
 			<Navbar
-				className={`navbar-inner ${isContactPage ? 'navbar-contact' : ''}`}
-				collapseOnSelect
-				expand='sm'
-				id='navbar'
+				maxWidth={'full'}
+				style={{ paddingLeft: '3rem', paddingRight: '1rem' }}
 			>
-				<Navbar.Toggle
-					aria-controls='navbarScrool'
-					data-bs-target='#navbarScrool'
-				/>
-				<Link to='/'>
-					<Navbar.Brand className='logo nav-item m-3 ms-auto'>
+				<NavbarBrand>
+					<Link to='/'>
 						<p className='brand'>VIZCO</p>
-					</Navbar.Brand>
-				</Link>
-				<Navbar.Collapse id='navbarScroll' className='ms-auto'>
-					<Nav className='ml-auto'>{renderedLinks}</Nav>
-				</Navbar.Collapse>
+					</Link>
+				</NavbarBrand>
+				<NavbarContent justify=''>{renderedLinks}</NavbarContent>
 			</Navbar>
-
 			<Outlet />
 		</>
 	);

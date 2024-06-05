@@ -1,11 +1,13 @@
-.navbar-inner {
-    background: rgba(0,0,0,0);
- }
- .navbar-contact {
-    position: absolute;
+/* .navbar-inner {
+    background: white;
+    top: 0;
+    border: none !important;
+} */
+ /* .navbar-contact {
+    position: fixed;
     width: 100%;
+} */
 
- }
  .brand {
     color: rgb(54, 54, 54);
     font-family: "Helvetica Neue", Arial, sans-serif;
