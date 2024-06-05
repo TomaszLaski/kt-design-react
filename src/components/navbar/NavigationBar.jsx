@@ -27,13 +27,7 @@ const NavigationBar = () => {
 		return (
 			<NavbarItem>
 				<Link key={link.label} className='nav-link mr-4' to={link.path}>
-					<li
-						className={`navbar-item ${
-							isContactPage ? 'navbar-item-contact' : ''
-						}`}
-					>
-						{link.label}
-					</li>
+					{link.label}
 				</Link>
 			</NavbarItem>
 		);
@@ -41,8 +35,8 @@ const NavigationBar = () => {
 	return (
 		<>
 			<Navbar
-				className={`navbar-inner ${isContactPage ? 'navbar-contact' : ''}`}
 				maxWidth={'full'}
+				style={{ paddingLeft: '3rem', paddingRight: '1rem' }}
 			>
 				<NavbarBrand>
 					<Link to='/'>
