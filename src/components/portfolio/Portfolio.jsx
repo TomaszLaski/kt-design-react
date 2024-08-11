@@ -77,7 +77,7 @@ function Portfolio() {
 	];
 
 	const handleImageClick = (image) => {
-		setSelectedImage(image);
+		setSelectedImage([image]);
 		setModalOpen(true);
 	};
 
@@ -109,12 +109,12 @@ function Portfolio() {
 				isOpen={modalOpen}
 				onOpen={() => setModalOpen(true)}
 				onClose={() => setModalOpen(false)}
-				image={selectedImage}
+				images={selectedImage}
 			/>
 			<Col>
-			<div className='px-5'>
-				<Row>{renderedImages}</Row>
-		</div>
+				<div className='px-5'>
+					<Row>{renderedImages}</Row>
+				</div>
 			</Col>
 		</Layout>
 	);
