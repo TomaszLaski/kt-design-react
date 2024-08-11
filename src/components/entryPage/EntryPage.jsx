@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -6,6 +6,7 @@ import {
 	faInstagram,
 	faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import logo from '../../assets/logo.jpg';
 
 import './EntryPage.css';
 
@@ -22,7 +23,7 @@ const EntryPage = () => {
 	return (
 		<section id='entryPage'>
 			<div className='left-side'>
-				<div className={`background-image`} />
+				<img className={`background-image`} src={logo} />
 			</div>
 			<div className='right-side'>
 				<div className='title'>

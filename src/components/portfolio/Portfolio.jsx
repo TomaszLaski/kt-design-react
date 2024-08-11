@@ -4,7 +4,38 @@ import { Row, Col } from 'react-bootstrap';
 import Layout from '../layout/Layout';
 import { Card, CardBody, Image } from '@nextui-org/react';
 import VisualModal from '../modal/VisualModal';
-
+import single1 from '../../../src/assets/single/1.jpg';
+import startowe from '../../../src/assets/single/startowe.jpg';
+import halloween from '../../../src/assets/single/halloween.jpg';
+import eca1 from '../../../src/assets/eca/1.jpg';
+import eca2 from '../../../src/assets/eca/2.jpg';
+import eca3 from '../../../src/assets/eca/3.jpg';
+import eca4 from '../../../src/assets/eca/4.jpg';
+import eca5 from '../../../src/assets/eca/5.jpg';
+import eca6 from '../../../src/assets/eca/6.jpg';
+import fritti1 from '../../../src/assets/fritti/fritti1.jpg';
+import fritti2 from '../../../src/assets/fritti/fritti2.jpg';
+import fritti3 from '../../../src/assets/fritti/fritti3.jpg';
+import fritti4 from '../../../src/assets/fritti/fritti4.jpg';
+import fritti5 from '../../../src/assets/fritti/fritti5.jpg';
+import fritti6 from '../../../src/assets/fritti/fritti6.jpg';
+import iceCubes1 from '../../../src/assets/IceCubes/1.jpg';
+import iceCubes2 from '../../../src/assets/IceCubes/2.jpg';
+import mieszkanie1 from '../../../src/assets/mieszkanie/MIESZKANIE1.jpg';
+import mieszkanie2 from '../../../src/assets/mieszkanie/MIESZKANIE2.jpg';
+import mieszkanie3 from '../../../src/assets/mieszkanie/MIESZKANIE3.jpg';
+import mieszkanie4 from '../../../src/assets/mieszkanie/MIESZKANIE4.jpg';
+import mieszkanie5 from '../../../src/assets/mieszkanie/MIESZKANIE5.jpg';
+import mieszkanie6 from '../../../src/assets/mieszkanie/MIESZKANIE6.jpg';
+import sofas1 from '../../../src/assets/sofas/1.jpg';
+import sofas2 from '../../../src/assets/sofas/2.jpg';
+import sofal1 from '../../../src/assets/sofal/1.jpg';
+import sofal2 from '../../../src/assets/sofal/2.jpg';
+import stodola1 from '../../../src/assets/stodola/1.jpg';
+import stodola2 from '../../../src/assets/stodola/2.jpg';
+import stodola3 from '../../../src/assets/stodola/3.jpg';
+import sypialnia from '../../../src/assets/single/sypialnia.jpg';
+import bed from '../../../src/assets/single/bed.jpg';
 function Portfolio() {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [selectedImage, setSelectedImage] = useState(null);
@@ -15,77 +46,83 @@ function Portfolio() {
 		{
 			id: 1,
 			folder: 'single',
-			images: ['1.jpg'],
+			images: [single1],
 			description: 'Autumn visualization of modern architecture.',
 		},
 		{
 			id: 2,
 			folder: 'single',
-			images: ['startowe.jpg'],
+			images: [startowe],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 3,
 			folder: 'single',
-			images: ['halloween.jpg'],
+			images: [halloween],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 4,
 			folder: 'eca',
-			images: Array.from({ length: 6 }, (_, i) => `${i + 1}.jpg`),
+			images: [eca1, eca2, eca3, eca4, eca5, eca6],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 5,
 			folder: 'fritti',
-			images: Array.from({ length: 6 }, (_, i) => `fritti${i + 1}.jpg`),
+			images: [fritti1, fritti2, fritti3, fritti4, fritti5, fritti6],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 6,
 			folder: 'IceCubes',
-			images: Array.from({ length: 2 }, (_, i) => `${i + 1}.jpg`),
+			images: [iceCubes1, iceCubes2],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 7,
 			folder: 'mieszkanie',
-			images: Array.from({ length: 6 }, (_, i) => `MIESZKANIE${i + 1}.jpg`),
+			images: [
+				mieszkanie1,
+				mieszkanie2,
+				mieszkanie3,
+				mieszkanie4,
+				mieszkanie5,
+				mieszkanie6,
+			],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 8,
 			folder: 'sofas',
-			images: Array.from({ length: 2 }, (_, i) => `${i + 1}.jpg`),
+			images: [sofas1, sofas2],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 9,
 			folder: 'sofal',
-			images: Array.from({ length: 2 }, (_, i) => `${i + 1}.jpg`),
+			images: [sofal1, sofal2],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 10,
-			folder: 'stodoła',
-			images: Array.from({ length: 3 }, (_, i) => `${i + 1}.jpg`),
+			folder: 'stodola',
+			images: [stodola1, stodola2, stodola3],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 11,
 			folder: 'single',
-			images: ['sypialnia.jpg'],
+			images: [sypialnia],
 			description: 'Description in progress :)',
 		},
 		{
 			id: 12,
 			folder: 'single',
-			images: ['bed.jpg'],
+			images: [bed],
 			description: 'Description in progress :)',
 		},
 	];
-
 	const handleImageClick = (folder) => {
 		setSelectedImage(folder.images);
 		setSelectedFolder(folder);
@@ -100,7 +137,7 @@ function Portfolio() {
 					<Image
 						onClick={() => handleImageClick(folder)}
 						className={`entryImg ${index === 1 ? 'hovered' : ''}`}
-						src={`/assets/${folder.folder}/${folder.images[0]}`}
+						src={folder.images[0]}
 						alt='Gallery image'
 						style={{
 							width: '100%',

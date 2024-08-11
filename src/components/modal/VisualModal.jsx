@@ -23,8 +23,6 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 		centerPadding: '0px',
 		className: 'center',
 	};
-	// console.log(images, 'images');
-	// console.log(images[0].length, 'images length');
 
 	return (
 		<Modal
@@ -46,7 +44,7 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 								{images &&
 									(images.length === 1 ? (
 										<Image
-											src={`src/assets/${folder.folder}/${images[0]}`}
+											src={folder.images[0]}
 											alt='Gallery image'
 											style={{
 												width: '100%',
@@ -59,8 +57,8 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 											{images.map((image, index) => (
 												<div key={index}>
 													<Image
-														src={`src/assets/${folder.folder}/${image}`}
-														alt='Gallery image'
+														src={image}
+														alt={`Gallery image ${index + 1}`}
 														style={{
 															width: '100%',
 															height: '100%',
