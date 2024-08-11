@@ -44,34 +44,38 @@ const Contact = () => {
 					<div className='contact'>
 						<h1 className='contactH1'>GIVE ME A SHOUT!</h1>
 						<p style={{ marginTop: '2rem' }}>Phone: (+48) 514596199</p>
-						<p style={{ marginTop: '2rem' }}>Email: kt-design@o2.pl</p>
+						<p style={{ marginTop: '2rem' }}>
+							Email: klaudiatarkowska2@gmail.com
+						</p>
 						<p style={{ marginTop: '2rem', marginBottom: '2rem' }}>
 							Social Media:
 						</p>
-						<a
-							href='https://www.behance.net/klaudiatarkows1'
-							className='icon'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<FontAwesomeIcon icon={faBehance} className='icon-color' />
-						</a>
-						<a
-							href='https://www.instagram.com/kt_studioo/'
-							className='icon'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<FontAwesomeIcon icon={faInstagram} className='icon-color' />
-						</a>
-						<a
-							href='https://www.linkedin.com/in/klaudia-tarkowska-892502210/'
-							className='icon'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<FontAwesomeIcon icon={faLinkedin} className='icon-color' />
-						</a>
+						<div className='icon-container'>
+							<a
+								href='https://www.behance.net/klaudiatarkows1'
+								className='icon'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<FontAwesomeIcon icon={faBehance} className='icon-color' />
+							</a>
+							<a
+								href='https://www.instagram.com/vizco_studio/'
+								className='icon'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<FontAwesomeIcon icon={faInstagram} className='icon-color' />
+							</a>
+							<a
+								href='https://www.linkedin.com/in/klaudia-tarkowska-892502210/'
+								className='icon'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<FontAwesomeIcon icon={faLinkedin} className='icon-color' />
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

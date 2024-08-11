@@ -6,6 +6,12 @@
 .copyright {
    font-family: "Helvetica Neue", Arial, sans-serif;
 }
+.centerCopyright {
+   text-align: center !important;
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
 @media (max-width: 768px) {
    .custom-nav {
      flex-direction: column !important; 

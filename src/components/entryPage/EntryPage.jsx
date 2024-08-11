@@ -10,36 +10,28 @@ import {
 import './EntryPage.css';
 
 const EntryPage = () => {
-	const [animateBackground, setAnimateBackground] = useState(false);
-
 	const navigate = useNavigate();
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		setAnimateBackground(true);
-
 		setTimeout(() => {
 			navigate('/portfolio');
-		}, 500);
+		}, 300);
 	};
 
 	return (
 		<section id='entryPage'>
 			<div className='left-side'>
-				<div
-					className={`background-image${
-						animateBackground ? ' zoom-animation' : ''
-					}`}
-				/>
+				<div className={`background-image`} />
 			</div>
 			<div className='right-side'>
 				<div className='title'>
 					<h1 onClick={handleClick} className='Title'>
 						VIZCO
 					</h1>
-					<button type='button' className='btn' onClick={handleClick}>
+					<p className='btn' onClick={handleClick}>
 						Enter
-					</button>
+					</p>
 					<div className='social-icons'>
 						<a
 							href='https://www.behance.net/klaudiatarkows1'

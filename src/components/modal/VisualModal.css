@@ -1,0 +1,7 @@
+@media (max-width: 600px) {
+  .modal-content-mobile {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

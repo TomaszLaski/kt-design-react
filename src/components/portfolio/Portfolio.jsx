@@ -5,111 +5,134 @@ import Layout from '../layout/Layout';
 import { Card, CardBody, Image } from '@nextui-org/react';
 import VisualModal from '../modal/VisualModal';
 
-import multiple1_main from '../../../src/assets/1/main.jpg';
-import multiple1_second from '../../../src/assets//1/second.jpg';
-import multiple2_main from '../../../src/assets//2/main.jpg';
-import multiple2_second from '../../../src/assets//2/second.jpg';
-import multiple3_main from '../../../src/assets//3/main.jpg';
-import multiple3_second from '../../../src/assets//3/second.jpg';
-import multiple4_main from '../../../src/assets//4/main.jpg';
-import multiple4_second from '../../../src/assets//4/second.jpg';
-import multiple5_main from '../../../src/assets//5/main.jpg';
-import multiple5_second from '../../../src/assets//5/second.jpg';
-
-import single1 from '../../../src/assets//single/1.jpg';
-import single2 from '../../../src/assets//single/2.jpg';
-import single3 from '../../../src/assets//single/3.jpg';
-import single4 from '../../../src/assets//single/4.jpg';
-import single5 from '../../../src/assets//single/5.jpg';
-import single6 from '../../../src/assets//single/6.jpg';
-import single7 from '../../../src/assets//single/7.jpg';
-import single8 from '../../../src/assets//single/8.jpg';
-import single9 from '../../../src/assets//single/9.jpg';
-import single10 from '../../../src/assets//single/10.jpg';
-import single11 from '../../../src/assets//single/11.jpg';
-
 function Portfolio() {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [selectedImage, setSelectedImage] = useState(null);
+	const [selectedFolder, setSelectedFolder] = useState(null);
+	const [selectedDescription, setSelectedDescription] = useState('');
+
 	const gallery = [
 		{
 			id: 1,
-			main: multiple1_main,
-			second: multiple1_second,
-			folder: 'multiple',
+			folder: 'single',
+			images: ['1.jpg'],
+			description: 'Autumn visualization of modern architecture.',
 		},
 		{
 			id: 2,
-			main: multiple2_main,
-			second: multiple2_second,
-			folder: 'multiple',
+			folder: 'single',
+			images: ['startowe.jpg'],
+			description: 'Description in progress :)',
 		},
 		{
 			id: 3,
-			main: multiple3_main,
-			second: multiple3_second,
-			folder: 'multiple',
+			folder: 'single',
+			images: ['halloween.jpg'],
+			description: 'Description in progress :)',
 		},
 		{
 			id: 4,
-			main: multiple4_main,
-			second: multiple4_second,
-			folder: 'multiple',
+			folder: 'eca',
+			images: Array.from({ length: 6 }, (_, i) => `${i + 1}.jpg`),
+			description: 'Description in progress :)',
 		},
 		{
 			id: 5,
-			main: multiple5_main,
-			second: multiple5_second,
-			folder: 'multiple',
+			folder: 'fritti',
+			images: Array.from({ length: 6 }, (_, i) => `fritti${i + 1}.jpg`),
+			description: 'Description in progress :)',
 		},
-
-		{ id: 7, main: single1, second: null, folder: 'single' },
-		{ id: 8, main: single2, second: null, folder: 'single' },
-		{ id: 9, main: single3, second: null, folder: 'single' },
-		{ id: 10, main: single4, second: null, folder: 'single' },
-		{ id: 11, main: single5, second: null, folder: 'single' },
-		{ id: 12, main: single6, second: null, folder: 'single' },
-		{ id: 13, main: single7, second: null, folder: 'single' },
-		{ id: 14, main: single8, second: null, folder: 'single' },
-		{ id: 15, main: single9, second: null, folder: 'single' },
-		{ id: 16, main: single10, second: null, folder: 'single' },
-		{ id: 17, main: single11, second: null, folder: 'single' },
+		{
+			id: 6,
+			folder: 'IceCubes',
+			images: Array.from({ length: 2 }, (_, i) => `${i + 1}.jpg`),
+			description: 'Description in progress :)',
+		},
+		{
+			id: 7,
+			folder: 'mieszkanie',
+			images: Array.from({ length: 6 }, (_, i) => `MIESZKANIE${i + 1}.jpg`),
+			description: 'Description in progress :)',
+		},
+		{
+			id: 8,
+			folder: 'sofas',
+			images: Array.from({ length: 2 }, (_, i) => `${i + 1}.jpg`),
+			description: 'Description in progress :)',
+		},
+		{
+			id: 9,
+			folder: 'sofal',
+			images: Array.from({ length: 2 }, (_, i) => `${i + 1}.jpg`),
+			description: 'Description in progress :)',
+		},
+		{
+			id: 10,
+			folder: 'stodoła',
+			images: Array.from({ length: 3 }, (_, i) => `${i + 1}.jpg`),
+			description: 'Description in progress :)',
+		},
+		{
+			id: 11,
+			folder: 'single',
+			images: ['sypialnia.jpg'],
+			description: 'Description in progress :)',
+		},
+		{
+			id: 12,
+			folder: 'single',
+			images: ['bed.jpg'],
+			description: 'Description in progress :)',
+		},
 	];
 
-	const handleImageClick = (image) => {
-		setSelectedImage([image]);
+	const handleImageClick = (folder) => {
+		setSelectedImage(folder.images);
+		setSelectedFolder(folder);
+		setSelectedDescription(folder.description);
 		setModalOpen(true);
 	};
 
-	const renderedImages = gallery.map((image) => (
-		<Col key={image.id} xs={12} md={6} lg={4} className='p-2'>
+	const renderedImages = gallery.map((folder, index) => (
+		<Col key={`${folder.id}-${index}`} xs={12} md={6} lg={4} className='p-2'>
 			<Card className='image-container rounded-none p-0'>
 				<CardBody className='p-0'>
 					<Image
-						onClick={() => handleImageClick(image)}
-						className={`entryImg ${image.second ? 'hovered' : ''}`}
-						src={image.second ? image.second : image.main}
+						onClick={() => handleImageClick(folder)}
+						className={`entryImg ${index === 1 ? 'hovered' : ''}`}
+						src={`src/assets/${folder.folder}/${folder.images[0]}`}
 						alt='Gallery image'
 						style={{
 							width: '100%',
 							aspectRatio: '4 / 3',
 							objectFit: 'cover',
-							paddingTop: '0',
 						}}
 					/>
+					<div
+						style={{
+							position: 'absolute',
+							top: '10px',
+							right: '10px',
+							color: 'white',
+							backgroundColor: 'rgba(0, 0, 0, 0.5)',
+							padding: '5px',
+							borderRadius: '5px',
+						}}
+					>
+						{folder.images.length}
+					</div>
 				</CardBody>
 			</Card>
 		</Col>
 	));
-
 	return (
-		/*<div className="portfolio-container" style={{ padding: '0 140px' }}>*/
 		<Layout>
 			<VisualModal
 				isOpen={modalOpen}
 				onOpen={() => setModalOpen(true)}
 				onClose={() => setModalOpen(false)}
 				images={selectedImage}
+				folder={selectedFolder}
 			/>
 			<Col>
 				<div className='px-5'>
