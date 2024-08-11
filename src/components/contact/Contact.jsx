@@ -18,10 +18,8 @@ const Contact = () => {
 				setNavbarHeight(heightInPixels);
 			};
 
-			// Tworzenie obserwatora zmian
 			const observer = new MutationObserver(updateNavbarHeight);
 
-			// Rozpoczęcie obserwacji
 			observer.observe(navbar, {
 				attributes: true,
 				childList: true,
