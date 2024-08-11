@@ -14,14 +14,18 @@ function Footer({ showIcons }) {
 	return (
 		<>
 			<Navbar className='footer' bg='' variant='light'>
-				<Container className='custom-nav'>
-					<Navbar.Brand href='#home'>
+				<Container className={`custom-nav ${showIcons ? '' : 'centerCopyright'}`}>
+					{' '}
+					<Navbar.Brand
+						href='#home'
+						style={{ justifyContent: showIcons ? 'flex-start' : 'center' }}
+					>
 						<p
 							className='copyright'
 							style={{ textAlign: showIcons ? 'left' : 'center' }}
 						>
 							Copyright 2023 VIZCO
-						</p>{' '}
+						</p>
 					</Navbar.Brand>
 					<Nav className='me-auto custom-nav-container'>
 						{showIcons && (
