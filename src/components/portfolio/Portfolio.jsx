@@ -4,38 +4,59 @@ import { Row, Col } from 'react-bootstrap';
 import Layout from '../layout/Layout';
 import { Card, CardBody, Image } from '@nextui-org/react';
 import VisualModal from '../modal/VisualModal';
-import single1 from '@/assets/single/1.jpg';
-import startowe from '@/assets/single/startowe.jpg';
-import halloween from '@/assets/single/halloween.jpg';
-import eca1 from '@/assets/eca/1.jpg';
-import eca2 from '@/assets/eca/2.jpg';
-import eca3 from '@/assets/eca/3.jpg';
-import eca4 from '@/assets/eca/4.jpg';
-import eca5 from '@/assets/eca/5.jpg';
-import eca6 from '@/assets/eca/6.jpg';
-import fritti1 from '@/assets/fritti/fritti1.jpg';
-import fritti2 from '@/assets/fritti/fritti2.jpg';
-import fritti3 from '@/assets/fritti/fritti3.jpg';
-import fritti4 from '@/assets/fritti/fritti4.jpg';
-import fritti5 from '@/assets/fritti/fritti5.jpg';
-import fritti6 from '@/assets/fritti/fritti6.jpg';
-import iceCubes1 from '@/assets/IceCubes/1.jpg';
-import iceCubes2 from '@/assets/IceCubes/2.jpg';
-import mieszkanie1 from '@/assets/mieszkanie/MIESZKANIE1.jpg';
-import mieszkanie2 from '@/assets/mieszkanie/MIESZKANIE2.jpg';
-import mieszkanie3 from '@/assets/mieszkanie/MIESZKANIE3.jpg';
-import mieszkanie4 from '@/assets/mieszkanie/MIESZKANIE4.jpg';
-import mieszkanie5 from '@/assets/mieszkanie/MIESZKANIE5.jpg';
-import mieszkanie6 from '@/assets/mieszkanie/MIESZKANIE6.jpg';
-import sofas1 from '@/assets/sofas/1.jpg';
-import sofas2 from '@/assets/sofas/2.jpg';
-import sofal1 from '@/assets/sofal/1.jpg';
-import sofal2 from '@/assets/sofal/2.jpg';
-import stodola1 from '@/assets/stodola/1.jpg';
-import stodola2 from '@/assets/stodola/2.jpg';
-import stodola3 from '@/assets/stodola/3.jpg';
-import sypialnia from '@/assets/single/sypialnia.jpg';
-import bed from '@/assets/single/bed.jpg';
+
+const single1 = new URL('@/assets/single/1.jpg', import.meta.url).href;
+const startowe = new URL('@/assets/single/startowe.jpg', import.meta.url).href;
+const halloween = new URL('@/assets/single/halloween.jpg', import.meta.url)
+	.href;
+const eca1 = new URL('@/assets/eca/1.jpg', import.meta.url).href;
+const eca2 = new URL('@/assets/eca/2.jpg', import.meta.url).href;
+const eca3 = new URL('@/assets/eca/3.jpg', import.meta.url).href;
+const eca4 = new URL('@/assets/eca/4.jpg', import.meta.url).href;
+const eca5 = new URL('@/assets/eca/5.jpg', import.meta.url).href;
+const eca6 = new URL('@/assets/eca/6.jpg', import.meta.url).href;
+const fritti1 = new URL('@/assets/fritti/fritti1.jpg', import.meta.url).href;
+const fritti2 = new URL('@/assets/fritti/fritti2.jpg', import.meta.url).href;
+const fritti3 = new URL('@/assets/fritti/fritti3.jpg', import.meta.url).href;
+const fritti4 = new URL('@/assets/fritti/fritti4.jpg', import.meta.url).href;
+const fritti5 = new URL('@/assets/fritti/fritti5.jpg', import.meta.url).href;
+const fritti6 = new URL('@/assets/fritti/fritti6.jpg', import.meta.url).href;
+const iceCubes1 = new URL('@/assets/IceCubes/1.jpg', import.meta.url).href;
+const iceCubes2 = new URL('@/assets/IceCubes/2.jpg', import.meta.url).href;
+const mieszkanie1 = new URL(
+	'@/assets/mieszkanie/MIESZKANIE1.jpg',
+	import.meta.url
+).href;
+const mieszkanie2 = new URL(
+	'@/assets/mieszkanie/MIESZKANIE2.jpg',
+	import.meta.url
+).href;
+const mieszkanie3 = new URL(
+	'@/assets/mieszkanie/MIESZKANIE3.jpg',
+	import.meta.url
+).href;
+const mieszkanie4 = new URL(
+	'@/assets/mieszkanie/MIESZKANIE4.jpg',
+	import.meta.url
+).href;
+const mieszkanie5 = new URL(
+	'@/assets/mieszkanie/MIESZKANIE5.jpg',
+	import.meta.url
+).href;
+const mieszkanie6 = new URL(
+	'@/assets/mieszkanie/MIESZKANIE6.jpg',
+	import.meta.url
+).href;
+const sofas1 = new URL('@/assets/sofas/1.jpg', import.meta.url).href;
+const sofas2 = new URL('@/assets/sofas/2.jpg', import.meta.url).href;
+const sofal1 = new URL('@/assets/sofal/1.jpg', import.meta.url).href;
+const sofal2 = new URL('@/assets/sofal/2.jpg', import.meta.url).href;
+const stodola1 = new URL('@/assets/stodola/1.jpg', import.meta.url).href;
+const stodola2 = new URL('@/assets/stodola/2.jpg', import.meta.url).href;
+const stodola3 = new URL('@/assets/stodola/3.jpg', import.meta.url).href;
+const sypialnia = new URL('@/assets/single/sypialnia.jpg', import.meta.url)
+	.href;
+const bed = new URL('@/assets/single/bed.jpg', import.meta.url).href;
 
 function Portfolio() {
 	const [modalOpen, setModalOpen] = useState(false);
