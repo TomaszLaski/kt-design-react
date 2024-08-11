@@ -10,39 +10,48 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
 
-function Footer() {
+function Footer({ showIcons }) {
 	return (
 		<>
 			<Navbar className='footer' bg='' variant='light'>
 				<Container className='custom-nav'>
 					<Navbar.Brand href='#home'>
-						<p className='copyright'>Copyright 2023 VIZCO</p>
+						<p
+							className='copyright'
+							style={{ textAlign: showIcons ? 'left' : 'center' }}
+						>
+							Copyright 2023 VIZCO
+						</p>{' '}
 					</Navbar.Brand>
 					<Nav className='me-auto custom-nav-container'>
-						<Nav.Link
-							href='https://www.behance.net/klaudiatarkows1'
-							className='icon'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<FontAwesomeIcon icon={faBehance} />
-						</Nav.Link>
-						<Nav.Link
-							href='https://www.instagram.com/kt_studioo/'
-							className='icon'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<FontAwesomeIcon icon={faInstagram} />
-						</Nav.Link>{' '}
-						<Nav.Link
-							href='https://www.linkedin.com/in/klaudia-tarkowska-892502210/'
-							className='icon'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<FontAwesomeIcon icon={faLinkedin} />
-						</Nav.Link>
+						{showIcons && (
+							<>
+								<Nav.Link
+									href='https://www.behance.net/klaudiatarkows1'
+									className='icon'
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									<FontAwesomeIcon icon={faBehance} />
+								</Nav.Link>
+								<Nav.Link
+									href='https://www.instagram.com/kt_studioo/'
+									className='icon'
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									<FontAwesomeIcon icon={faInstagram} />
+								</Nav.Link>
+								<Nav.Link
+									href='https://www.linkedin.com/in/klaudia-tarkowska-892502210/'
+									className='icon'
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									<FontAwesomeIcon icon={faLinkedin} />
+								</Nav.Link>
+							</>
+						)}
 					</Nav>
 				</Container>
 			</Navbar>
