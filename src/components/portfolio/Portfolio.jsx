@@ -100,7 +100,7 @@ function Portfolio() {
 					<Image
 						onClick={() => handleImageClick(folder)}
 						className={`entryImg ${index === 1 ? 'hovered' : ''}`}
-						src={`src/assets/${folder.folder}/${folder.images[0]}`}
+						src={`/assets/${folder.folder}/${folder.images[0]}`}
 						alt='Gallery image'
 						style={{
 							width: '100%',
