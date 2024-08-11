@@ -35,7 +35,7 @@ function Footer({ showIcons }) {
 									<FontAwesomeIcon icon={faBehance} />
 								</Nav.Link>
 								<Nav.Link
-									href='https://www.instagram.com/kt_studioo/'
+									href='https://www.instagram.com/vizco_studio/'
 									className='icon'
 									target='_blank'
 									rel='noopener noreferrer'

@@ -44,7 +44,9 @@ const Contact = () => {
 					<div className='contact'>
 						<h1 className='contactH1'>GIVE ME A SHOUT!</h1>
 						<p style={{ marginTop: '2rem' }}>Phone: (+48) 514596199</p>
-						<p style={{ marginTop: '2rem' }}>Email: kt-design@o2.pl</p>
+						<p style={{ marginTop: '2rem' }}>
+							Email: klaudiatarkowska2@gmail.com
+						</p>
 						<p style={{ marginTop: '2rem', marginBottom: '2rem' }}>
 							Social Media:
 						</p>
@@ -57,7 +59,7 @@ const Contact = () => {
 							<FontAwesomeIcon icon={faBehance} className='icon-color' />
 						</a>
 						<a
-							href='https://www.instagram.com/kt_studioo/'
+							href='https://www.instagram.com/vizco_studio/'
 							className='icon'
 							target='_blank'
 							rel='noopener noreferrer'

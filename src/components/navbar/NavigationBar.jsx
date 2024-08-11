@@ -1,23 +1,14 @@
 import React from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
+import { Link, Outlet } from 'react-router-dom';
 import './NavigationBar.css';
 import {
 	Navbar,
 	NavbarBrand,
-	NavbarMenuToggle,
-	NavbarMenu,
-	NavbarMenuItem,
 	NavbarContent,
 	NavbarItem,
-	Button,
 } from '@nextui-org/react';
 
 const NavigationBar = () => {
-	const location = useLocation();
-	const isContactPage = location.pathname === '/contact';
-
 	const links = [
 		{ label: 'Portfolio', path: '/portfolio' },
 		{ label: 'Contact', path: '/contact' },
@@ -26,7 +17,12 @@ const NavigationBar = () => {
 	const renderedLinks = links.map((link) => {
 		return (
 			<NavbarItem>
-				<Link key={link.label} className='nav-link mr-4' to={link.path}>
+				<Link
+					key={link.label}
+					className='nav-link mr-4 mobile-margin'
+					to={link.path}
+				>
+					{' '}
 					{link.label}
 				</Link>
 			</NavbarItem>
@@ -34,10 +30,7 @@ const NavigationBar = () => {
 	});
 	return (
 		<>
-			<Navbar
-				maxWidth={'full'}
-				style={{ paddingLeft: '3rem', paddingRight: '1rem' }}
-			>
+			<Navbar maxWidth={'full'} className='navbar'>
 				<NavbarBrand>
 					<Link to='/'>
 						<p className='brand'>VIZCO</p>
