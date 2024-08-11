@@ -2,7 +2,8 @@ import React from 'react';
 import NavigationBar from '../navbar/NavigationBar';
 import Footer from '../footer/Footer';
 
-function Layout({ children }) {
+function Layout({ children, showIcons = true }) {
+	console.log(showIcons, 'showIcons');
 	return (
 		<div
 			style={{
@@ -13,7 +14,7 @@ function Layout({ children }) {
 		>
 			<NavigationBar />
 			<div style={{ flex: '1' }}>{children}</div>
-			<Footer />
+			<Footer showIcons={showIcons} />
 		</div>
 	);
 }

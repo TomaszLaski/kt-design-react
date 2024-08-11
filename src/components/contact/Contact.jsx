@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../layout/Layout';
 import './Contact.css';
-import contactImg from '../../assets/contactImg.jpg';
-import { Container } from 'react-bootstrap';
-
+import Nav from 'react-bootstrap/Nav';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faBehance,
+	faInstagram,
+	faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 const Contact = () => {
-	const [inputs, setInputs] = useState({});
 	const [navbarHeight, setNavbarHeight] = useState(0);
-
 	useEffect(() => {
 		const navbar = document.getElementById('navbar');
-
 		if (navbar) {
-			// Funkcja aktualizująca wysokość Navbara
 			const updateNavbarHeight = () => {
 				const heightInPixels = navbar.offsetHeight;
 				setNavbarHeight(heightInPixels);
@@ -29,78 +29,54 @@ const Contact = () => {
 				attributeFilter: ['style', 'class'],
 			});
 			updateNavbarHeight();
-
 			return () => {
 				observer.disconnect();
 			};
 		}
 	}, []);
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		console.log(inputs);
-	};
-
-	const handleChange = (event) => {
-		const name = event.target.name;
-		const value = event.target.value;
-		setInputs((values) => ({ ...values, [name]: value }));
-	};
 
 	return (
-		<Layout>
+		<Layout showIcons={false}>
 			<div
 				className='contactContainer'
 				style={{ marginTop: `${navbarHeight}px` }}
-			>
-				<img className='contactImg' src={contactImg} alt='Contact' />
-			</div>
-
+			></div>
 			<div className='contactAndFormContainer'>
 				<div className='contactAndFormSection'>
 					<div className='contact'>
-						<h1 className='contactH1'>GIVE ME A SHOUT</h1>
-						<p>Phone: 123456</p>
-						<p>Email: </p>
-						<p>Social media:</p>
-					</div>
-				</div>
-
-				<div className='contactAndFormSection'>
-					<div className='form-container'>
-						<form onSubmit={handleSubmit}>
-							<div>
-								<label htmlFor='email'>Email</label>
-								<input
-									value={inputs.email || ''}
-									onChange={handleChange}
-									name='email'
-									type='text'
-								/>
-							</div>
-							<div>
-								<label htmlFor='password'>Phone</label>
-								<input
-									value={inputs.phone || ''}
-									onChange={handleChange}
-									name='phone'
-									type='text'
-								/>
-							</div>
-							<div>
-								<label htmlFor='message'>Leave a Message</label>
-								<textarea
-									type='text'
-									name='message'
-									value={inputs.textarea}
-									onChange={handleChange}
-								></textarea>
-							</div>
-							<button type='submit'>Submit</button>
-						</form>
+						<h1 className='contactH1'>GIVE ME A SHOUT!</h1>
+						<p style={{ marginTop: '2rem' }}>Phone: (+48) 514596199</p>
+						<p style={{ marginTop: '2rem' }}>Email: kt-design@o2.pl</p>
+						<p style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+							Social Media:
+						</p>
+						<a
+							href='https://www.behance.net/klaudiatarkows1'
+							className='icon'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<FontAwesomeIcon icon={faBehance} className='icon-color' />
+						</a>
+						<a
+							href='https://www.instagram.com/kt_studioo/'
+							className='icon'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<FontAwesomeIcon icon={faInstagram} className='icon-color' />
+						</a>
+						<a
+							href='https://www.linkedin.com/in/klaudia-tarkowska-892502210/'
+							className='icon'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<FontAwesomeIcon icon={faLinkedin} className='icon-color' />
+						</a>
 					</div>
 				</div>
 			</div>
-
 			<div className='section'></div>
 		</Layout>
 	);
