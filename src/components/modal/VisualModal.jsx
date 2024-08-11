@@ -27,7 +27,7 @@ export default function VisualModal({ isOpen, onClose, images }) {
 
 	return (
 		<Modal isOpen={isOpen} onClose={onClose} backdrop='blur' size='large'>
-			<ModalContent>
+			<ModalContent style={{ overflow: 'hidden' }}>
 				{(onClose) => (
 					<>
 						<ModalHeader>{images ? images[0].folder : 'No Images'}</ModalHeader>
@@ -50,14 +50,6 @@ export default function VisualModal({ isOpen, onClose, images }) {
 								amet hendrerit risus, sed porttitor quam.
 							</p>
 						</ModalBody>
-						<ModalFooter>
-							<Button color='danger' variant='light' onPress={onClose}>
-								Close
-							</Button>
-							<Button color='primary' onPress={onClose}>
-								Action
-							</Button>
-						</ModalFooter>
 					</>
 				)}
 			</ModalContent>
