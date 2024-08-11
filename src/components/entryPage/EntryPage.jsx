@@ -6,7 +6,7 @@ import {
 	faInstagram,
 	faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
-import logo from '../../assets/logo.jpg';
+import logo from '@/assets/logo.jpg';
 
 import './EntryPage.css';
 

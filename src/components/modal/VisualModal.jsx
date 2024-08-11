@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import {
 	Modal,
@@ -10,7 +10,30 @@ import {
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './VisualModal.css';
+
 export default function VisualModal({ isOpen, onClose, images, folder }) {
+	const [placement, setPlacement] = useState('center');
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth <= 600) {
+				setPlacement('top');
+			} else {
+				setPlacement('center');
+			}
+		};
+
+		// Set initial placement
+		handleResize();
+
+		// Add event listener
+		window.addEventListener('resize', handleResize);
+
+		// Cleanup event listener on component unmount
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
 	const settings = {
 		dots: true,
 		infinite: true,
@@ -30,7 +53,8 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 			onClose={onClose}
 			backdrop='blur'
 			size='3xl'
-			className='modal-content-mobile'
+			className='modal-content-mobile '
+			placement={placement}
 		>
 			<ModalContent style={{ overflow: 'hidden' }}>
 				{(onClose) => (
@@ -50,6 +74,7 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 												width: '100%',
 												height: '100%',
 												objectFit: 'cover',
+												maxHeight: '80vh',
 											}}
 										/>
 									) : (

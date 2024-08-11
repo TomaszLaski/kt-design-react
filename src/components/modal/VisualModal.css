@@ -1,7 +1,10 @@
 @media (max-width: 600px) {
   .modal-content-mobile {
-    position: absolute;
+    position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    
   }
 }
