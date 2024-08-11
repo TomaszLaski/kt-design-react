@@ -9,7 +9,7 @@ import {
 } from '@nextui-org/react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import './VisualModal.css';
 export default function VisualModal({ isOpen, onClose, images, folder }) {
 	const settings = {
 		dots: true,
@@ -27,7 +27,13 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 	// console.log(images[0].length, 'images length');
 
 	return (
-		<Modal isOpen={isOpen} onClose={onClose} backdrop='blur' size='3xl'>
+		<Modal
+			isOpen={isOpen}
+			onClose={onClose}
+			backdrop='blur'
+			size='3xl'
+			className='modal-content-mobile'
+		>
 			<ModalContent style={{ overflow: 'hidden' }}>
 				{(onClose) => (
 					<>
@@ -67,11 +73,7 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 										</Slider>
 									))}
 							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-								pulvinar risus non risus hendrerit venenatis. Pellentesque sit
-								amet hendrerit risus, sed porttitor quam.
-							</p>
+							<p>{folder.description}</p>
 						</ModalBody>
 					</>
 				)}

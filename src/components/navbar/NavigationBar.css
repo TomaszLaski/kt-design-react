@@ -7,14 +7,20 @@
     position: fixed;
     width: 100%;
 } */
-
- .brand {
+.brand {
     color: rgb(54, 54, 54);
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 2rem;
+    text-decoration: none;
+    
 }
-
-
+.brand:hover {
+    color: rgb(54, 54, 54);
+}
+.custom-link {
+    text-decoration: none !important;
+    color: rgb(54, 54, 54);
+}
 
 .navbar-item-contact {
     color: rgb(54, 54, 54);
@@ -47,10 +53,9 @@
     .brand {
         font-size: 1.5rem;
         padding: 0;
-        margin: 0
-        
+        margin: 0;
     }
-
+    
     .navbar-item-contact {
         display: block;
         width: 100%;

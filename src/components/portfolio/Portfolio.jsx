@@ -9,75 +9,90 @@ function Portfolio() {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [selectedImage, setSelectedImage] = useState(null);
 	const [selectedFolder, setSelectedFolder] = useState(null);
+	const [selectedDescription, setSelectedDescription] = useState('');
 
 	const gallery = [
 		{
 			id: 1,
 			folder: 'single',
 			images: ['1.jpg'],
+			description: 'Autumn visualization of modern architecture.',
 		},
 		{
 			id: 2,
 			folder: 'single',
 			images: ['startowe.jpg'],
+			description: '',
 		},
 		{
 			id: 3,
 			folder: 'single',
 			images: ['halloween.jpg'],
+			description: '',
 		},
 		{
 			id: 4,
 			folder: 'eca',
 			images: Array.from({ length: 6 }, (_, i) => `${i + 1}.jpg`),
+			description: '',
 		},
 		{
 			id: 5,
 			folder: 'fritti',
 			images: Array.from({ length: 6 }, (_, i) => `fritti${i + 1}.jpg`),
+			description: '',
 		},
 		{
 			id: 6,
 			folder: 'IceCubes',
 			images: Array.from({ length: 2 }, (_, i) => `${i + 1}.jpg`),
+			description: '',
 		},
 		{
 			id: 7,
 			folder: 'mieszkanie',
 			images: Array.from({ length: 6 }, (_, i) => `MIESZKANIE${i + 1}.jpg`),
+			description: '',
 		},
 		{
 			id: 8,
 			folder: 'sofas',
 			images: Array.from({ length: 2 }, (_, i) => `${i + 1}.jpg`),
+			description: '',
 		},
 		{
 			id: 9,
 			folder: 'sofal',
 			images: Array.from({ length: 2 }, (_, i) => `${i + 1}.jpg`),
+			description: '',
 		},
 		{
 			id: 10,
 			folder: 'stodoła',
 			images: Array.from({ length: 3 }, (_, i) => `${i + 1}.jpg`),
+			description: '',
 		},
 		{
 			id: 11,
 			folder: 'single',
 			images: ['sypialnia.jpg'],
+			description: '',
 		},
 		{
 			id: 12,
 			folder: 'single',
 			images: ['bed.jpg'],
+			description: '',
 		},
 	];
 
 	const handleImageClick = (folder) => {
 		setSelectedImage(folder.images);
 		setSelectedFolder(folder);
+		setSelectedDescription(folder.description);
 		setModalOpen(true);
 	};
+
 	const renderedImages = gallery.map((folder, index) => (
 		<Col key={`${folder.id}-${index}`} xs={12} md={6} lg={4} className='p-2'>
 			<Card className='image-container rounded-none p-0'>

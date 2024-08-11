@@ -19,7 +19,7 @@ const NavigationBar = () => {
 			<NavbarItem>
 				<Link
 					key={link.label}
-					className='nav-link mr-4 mobile-margin'
+					className='nav-link mr-4 mobile-margin custom-link'
 					to={link.path}
 				>
 					{' '}
@@ -32,8 +32,8 @@ const NavigationBar = () => {
 		<>
 			<Navbar maxWidth={'full'} className='navbar'>
 				<NavbarBrand>
-					<Link to='/'>
-						<p className='brand'>VIZCO</p>
+					<Link to='/' className='custom-link'>
+						<p className='brand custom-link'>VIZCO</p>
 					</Link>
 				</NavbarBrand>
 				<NavbarContent justify=''>{renderedLinks}</NavbarContent>

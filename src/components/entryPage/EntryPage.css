@@ -4,19 +4,21 @@
   color: rgb(248, 233, 233);
 }
 
-.title {
-  border-radius: 10%;
-}
 .btn {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  color: white; 
+  color: #7f7f7f; 
   font-size: 2rem;
-  border: 2px solid white;
-  background-color: black;  
+  border: none !important;
   border-radius: 0;  
   cursor: pointer;  
 }
-
+.btn:active  {
+  outline: none !important
+  ;
+}
+.btn:focus  {
+  outline: none  !important;
+}
 .Title,
 .btn,
 .social-icons {
