@@ -8,6 +8,8 @@ import {
 	faInstagram,
 	faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+const myself = new URL('@/assets/Myself.jpg', import.meta.url).href;
+
 const Contact = () => {
 	const [navbarHeight, setNavbarHeight] = useState(0);
 	useEffect(() => {
@@ -39,10 +41,14 @@ const Contact = () => {
 				className='contactContainer'
 				style={{ marginTop: `${navbarHeight}px` }}
 			></div>
-			<div className='contactAndFormContainer'>
-				<div className='contactAndFormSection'>
-					<div className='contact'>
-						<h1 className='contactH1'>GIVE ME A SHOUT!</h1>
+
+			<div className='contactContainer'>
+				<h1 className='contactH1'>GIVE ME A SHOUT!</h1>
+				<div className='contactAndFormContainer'>
+					<div className='contact-left-side'>
+						<img className='contact-background-image' src={myself} />
+					</div>
+					<div className='contact-right-side'>
 						<p style={{ marginTop: '2rem' }}>Phone: (+48) 514596199</p>
 						<p style={{ marginTop: '2rem' }}>
 							Email: klaudiatarkowska2@gmail.com
@@ -50,14 +56,17 @@ const Contact = () => {
 						<p style={{ marginTop: '2rem', marginBottom: '2rem' }}>
 							Social Media:
 						</p>
-						<div className='icon-container'>
+						<div className='contact-icon-container'>
 							<a
 								href='https://www.behance.net/klaudiatarkows1'
-								className='icon'
+								className='contact-icon'
 								target='_blank'
 								rel='noopener noreferrer'
 							>
-								<FontAwesomeIcon icon={faBehance} className='icon-color' />
+								<FontAwesomeIcon
+									icon={faBehance}
+									className='contact-icon-color'
+								/>
 							</a>
 							<a
 								href='https://www.instagram.com/vizco_studio/'

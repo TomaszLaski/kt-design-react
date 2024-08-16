@@ -13,7 +13,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import './VisualModal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 function SampleNextArrow(props) {
 	const { className, style, onClick } = props;
