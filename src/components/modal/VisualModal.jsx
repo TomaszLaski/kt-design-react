@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import {
 	Modal,
@@ -17,15 +17,8 @@ import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 function SampleNextArrow(props) {
 	const { className, style, onClick } = props;
 	return (
-		<div
-			className={className}
-			style={{ ...style, display: 'block', background: 'transparent' }}
-			onClick={onClick}
-		>
-			<FontAwesomeIcon
-				icon={faAngleRight}
-				style={{ color: '#7f7f7f', fontSize: '24px' }}
-			/>
+		<div className={`${className} sample-arrow`} onClick={onClick}>
+			<FontAwesomeIcon icon={faAngleRight} className='sample-arrow-right' />
 		</div>
 	);
 }
@@ -33,15 +26,8 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
 	const { className, style, onClick } = props;
 	return (
-		<div
-			className={className}
-			style={{ ...style, display: 'block', background: 'transparent' }}
-			onClick={onClick}
-		>
-			<FontAwesomeIcon
-				icon={faAngleLeft}
-				style={{ color: '#7f7f7f', fontSize: '24px', padding: '0 0.2rem' }}
-			/>
+		<div className={`${className} sample-arrow`} onClick={onClick}>
+			<FontAwesomeIcon icon={faAngleLeft} className='sample-arrow-left' />
 		</div>
 	);
 }
@@ -92,30 +78,22 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 			onClose={onClose}
 			backdrop='blur'
 			size='3xl'
-			className='modal-content-mobile '
+			className='modal-content-mobile'
 			placement={placement}
 		>
-			<ModalContent style={{ overflow: 'hidden' }}>
+			<ModalContent>
 				{(onClose) => (
 					<>
 						<ModalHeader>{images ? images[0].folder : 'No Images'}</ModalHeader>
-						<ModalBody>
-							<div
-								className='slider-container'
-								style={{ marginBottom: '1rem' }}
-							>
+						<ModalBody className='nextui-modal-body'>
+							<div className='slider-container'>
 								{images &&
 									(images.length === 1 ? (
 										<div className='image-container'>
 											<Image
 												src={folder.images[0]}
 												alt='Gallery image'
-												style={{
-													width: '100%',
-													height: '100%',
-													objectFit: 'cover',
-													maxHeight: '75vh',
-												}}
+												className='image-style'
 											/>
 										</div>
 									) : (
@@ -125,24 +103,14 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 													<Image
 														src={image}
 														alt={`Gallery image ${index + 1}`}
-														style={{
-															width: '100%',
-															height: '100%',
-															objectFit: 'contain',
-															maxHeight: '75vh',
-														}}
+														className='slider-image-style'
 													/>
 												</div>
 											))}
 										</Slider>
 									))}
 							</div>
-							<div
-								style={{
-									textAlign: 'center',
-									margin: '0.6rem',
-								}}
-							>
+							<div className='button-container'>
 								<Button
 									color='default'
 									onClick={() => handleImageClick(images[currentImageIndex])}
