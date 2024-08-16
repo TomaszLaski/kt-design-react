@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Slider from 'react-slick';
 import {
 	Modal,
@@ -6,13 +6,54 @@ import {
 	ModalHeader,
 	ModalBody,
 	Image,
+	Button,
 } from '@nextui-org/react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './VisualModal.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
+
+function SampleNextArrow(props) {
+	const { className, style, onClick } = props;
+	return (
+		<div
+			className={className}
+			style={{ ...style, display: 'block', background: 'transparent' }}
+			onClick={onClick}
+		>
+			<FontAwesomeIcon
+				icon={faAngleRight}
+				style={{ color: '#7f7f7f', fontSize: '24px' }}
+			/>
+		</div>
+	);
+}
+
+function SamplePrevArrow(props) {
+	const { className, style, onClick } = props;
+	return (
+		<div
+			className={className}
+			style={{ ...style, display: 'block', background: 'transparent' }}
+			onClick={onClick}
+		>
+			<FontAwesomeIcon
+				icon={faAngleLeft}
+				style={{ color: '#7f7f7f', fontSize: '24px', padding: '0 0.2rem' }}
+			/>
+		</div>
+	);
+}
 
 export default function VisualModal({ isOpen, onClose, images, folder }) {
 	const [placement, setPlacement] = useState('center');
+	const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+	const handleImageClick = (imageUrl) => {
+		window.open(imageUrl, '_blank');
+	};
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -23,13 +64,9 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 			}
 		};
 
-		// Set initial placement
 		handleResize();
 
-		// Add event listener
 		window.addEventListener('resize', handleResize);
-
-		// Cleanup event listener on component unmount
 		return () => {
 			window.removeEventListener('resize', handleResize);
 		};
@@ -45,6 +82,9 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 		centerMode: true,
 		centerPadding: '0px',
 		className: 'center',
+		nextArrow: <SampleNextArrow />,
+		prevArrow: <SamplePrevArrow />,
+		afterChange: (current) => setCurrentImageIndex(current),
 	};
 
 	return (
@@ -67,20 +107,22 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 							>
 								{images &&
 									(images.length === 1 ? (
-										<Image
-											src={folder.images[0]}
-											alt='Gallery image'
-											style={{
-												width: '100%',
-												height: '100%',
-												objectFit: 'cover',
-												maxHeight: '80vh',
-											}}
-										/>
+										<div className='image-container'>
+											<Image
+												src={folder.images[0]}
+												alt='Gallery image'
+												style={{
+													width: '100%',
+													height: '100%',
+													objectFit: 'cover',
+													maxHeight: '75vh',
+												}}
+											/>
+										</div>
 									) : (
 										<Slider {...settings}>
 											{images.map((image, index) => (
-												<div key={index}>
+												<div key={index} className='image-container'>
 													<Image
 														src={image}
 														alt={`Gallery image ${index + 1}`}
@@ -88,13 +130,26 @@ export default function VisualModal({ isOpen, onClose, images, folder }) {
 															width: '100%',
 															height: '100%',
 															objectFit: 'contain',
-															maxHeight: '80vh',
+															maxHeight: '75vh',
 														}}
 													/>
 												</div>
 											))}
 										</Slider>
 									))}
+							</div>
+							<div
+								style={{
+									textAlign: 'center',
+									margin: '0.6rem',
+								}}
+							>
+								<Button
+									color='default'
+									onClick={() => handleImageClick(images[currentImageIndex])}
+								>
+									Open in new tab
+								</Button>
 							</div>
 							<p>{folder.description}</p>
 						</ModalBody>
