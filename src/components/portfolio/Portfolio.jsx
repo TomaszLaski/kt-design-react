@@ -82,9 +82,9 @@ const sofal2 = new URL('@/assets/sofal/2.jpg', import.meta.url).href;
 const stodola1 = new URL('@/assets/stodola/1.jpg', import.meta.url).href;
 const stodola2 = new URL('@/assets/stodola/2.jpg', import.meta.url).href;
 const stodola3 = new URL('@/assets/stodola/3.jpg', import.meta.url).href;
-const sypialnia = new URL('@/assets/single/sypialnia.jpg', import.meta.url)
+const sypialnia = new URL('@/assets/single/sypialnia1.jpg', import.meta.url)
 	.href;
-const bed = new URL('@/assets/single/bed.jpg', import.meta.url).href;
+const bed = new URL('@/assets/single/bed1.jpg', import.meta.url).href;
 
 function Portfolio() {
 	const [modalOpen, setModalOpen] = useState(false);
