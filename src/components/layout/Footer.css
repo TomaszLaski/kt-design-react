@@ -1,0 +1,10 @@
+footer {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+	padding: 22px var(--gutter);
+	border-top: 2px solid var(--ink);
+	color: var(--grey);
+	background: var(--paper);
+}

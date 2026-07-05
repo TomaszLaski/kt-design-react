@@ -1,0 +1,39 @@
+.cta {
+	background: var(--orange);
+	color: #fff;
+	text-align: left;
+	padding: clamp(56px, 8vw, 100px) var(--gutter);
+}
+.cta .mono {
+	color: #fff;
+}
+.cta h2 {
+	color: #fff;
+	max-width: 22ch;
+	margin-top: 14px;
+}
+.cta p {
+	margin-top: 16px;
+	max-width: 56ch;
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 17px;
+}
+.cta .row {
+	display: flex;
+	gap: 14px;
+	margin-top: 32px;
+	flex-wrap: wrap;
+}
+.cta .btn {
+	background: var(--ink);
+	border-color: var(--ink);
+}
+.cta .btn:hover {
+	background: #fff;
+	color: var(--ink);
+	border-color: #fff;
+}
+.cta-contact {
+	margin-top: 24px;
+	color: rgba(255, 255, 255, 0.9);
+}
