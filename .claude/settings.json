@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"nowy URL: %{http_code}, %{size_download} B\\\\n\" http://localhost:4173/models/rolex2-hq-v2.glb)",
+      "Bash(chromium-cli --session rolex)",
+      "Bash(node \"C:/Users/Tomasz/AppData/Local/Temp/claude/f--Firma-kt-design-react/c3a5ecec-7a81-41a3-8edf-5ed3743156fd/scratchpad/shot.mjs\")",
+      "Bash(node --max-old-space-size=8192 scripts/debug-color-discs.mjs \"src/assets/models/rolex2 \\(1\\).glb\" dist/models/debug-discs.glb)",
+      "Bash(node \"C:/Users/Tomasz/AppData/Local/Temp/claude/f--Firma-kt-design-react/c3a5ecec-7a81-41a3-8edf-5ed3743156fd/scratchpad/shot2.mjs\")"
+    ]
+  }
+}

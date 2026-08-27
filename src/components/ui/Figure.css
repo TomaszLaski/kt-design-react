@@ -1,0 +1,62 @@
+.figure {
+	position: relative;
+	overflow: hidden;
+	border-radius: 2px;
+	background: #000;
+	isolation: isolate;
+}
+
+.figure img {
+	transition: transform 1.1s cubic-bezier(0.16, 0.8, 0.24, 1);
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	transform: translateZ(0);
+}
+
+.figure .cap {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 16px 18px;
+	background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.55));
+	font-family: var(--grot);
+	font-size: 11.5px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #fff;
+	opacity: 0;
+	transform: translateY(6px);
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.figure:hover img {
+		transform: translateZ(0) scale(1.045);
+	}
+
+	.figure:hover .cap {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (hover: none) {
+	.figure .cap {
+		opacity: 1;
+		transform: none;
+		font-size: 10.5px;
+		padding: 12px 14px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.figure img {
+		transition: none;
+	}
+	.figure:hover img {
+		transform: none;
+	}
+}

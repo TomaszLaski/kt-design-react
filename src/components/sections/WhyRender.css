@@ -1,0 +1,45 @@
+.why {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1px;
+	background: var(--ink);
+	border: 2px solid var(--ink);
+}
+.why > div {
+	background: var(--paper);
+	padding: 26px 22px 30px;
+	transition: background 0.15s, color 0.15s;
+}
+.why > div:hover {
+	background: var(--orange);
+	color: #fff;
+}
+.why > div:hover .mono,
+.why > div:hover p {
+	color: #fff;
+}
+.why .mono {
+	color: var(--orange);
+}
+.why h3 {
+	font-size: 19px;
+	font-weight: 800;
+	margin: 12px 0 10px;
+	letter-spacing: -0.01em;
+	text-transform: uppercase;
+}
+.why p {
+	font-size: 14.5px;
+	color: #5b5b5f;
+}
+
+@media (max-width: 980px) {
+	.why {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 640px) {
+	.why {
+		grid-template-columns: 1fr;
+	}
+}

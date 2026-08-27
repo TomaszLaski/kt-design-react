@@ -11,5 +11,8 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
+    // This is a plain-JS project that doesn't use prop-types.
+    'react/prop-types': 'off',
+    'react/no-unescaped-entities': 'off',
   },
 }

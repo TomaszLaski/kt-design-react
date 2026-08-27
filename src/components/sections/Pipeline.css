@@ -1,0 +1,63 @@
+.pipeline {
+	background: var(--ink);
+	color: var(--paper);
+}
+
+.pipe-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1px;
+	background: var(--line-dark);
+	border: 1px solid var(--line-dark);
+}
+.step {
+	background: var(--ink);
+	padding: 26px 22px 32px;
+	position: relative;
+}
+.step .num {
+	font-weight: 900;
+	font-size: 44px;
+	color: transparent;
+	line-height: 1;
+	-webkit-text-stroke: 1.5px var(--orange);
+	letter-spacing: -0.02em;
+}
+.step h3 {
+	font-size: 18px;
+	font-weight: 800;
+	margin: 16px 0 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+}
+.step p {
+	color: #a9a9ad;
+	font-size: 14.5px;
+}
+.step-arrow {
+	position: absolute;
+	top: 30px;
+	right: 18px;
+	color: var(--orange);
+	font-size: 20px;
+}
+
+.pipe-note {
+	margin-top: 26px;
+	color: #a9a9ad;
+	max-width: 60ch;
+}
+.pipe-note b {
+	color: var(--paper);
+}
+
+@media (max-width: 980px) {
+	.pipe-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 640px) {
+	.pipe-grid {
+		grid-template-columns: 1fr;
+	}
+}

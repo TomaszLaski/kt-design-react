@@ -1,0 +1,38 @@
+.deliverables-section {
+	padding-top: 0;
+}
+
+.deliv {
+	border-top: 2px solid var(--ink);
+}
+.deliv-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	padding: 22px 0;
+	border-bottom: 1px solid var(--line);
+	flex-wrap: wrap;
+	transition: padding-left 0.2s;
+}
+.deliv-row:hover {
+	padding-left: 14px;
+}
+.deliv-row:hover .d-name {
+	color: var(--orange);
+}
+.d-name {
+	font-size: clamp(20px, 2.6vw, 32px);
+	font-weight: 800;
+	letter-spacing: -0.015em;
+	text-transform: uppercase;
+	transition: color 0.15s;
+}
+.d-desc {
+	color: #5b5b5f;
+	font-size: 14.5px;
+	max-width: 44ch;
+}
+.d-tag {
+	color: var(--grey);
+}
