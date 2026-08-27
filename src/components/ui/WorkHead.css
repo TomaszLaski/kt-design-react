@@ -1,0 +1,27 @@
+.work-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 40px;
+	flex-wrap: wrap;
+	margin-bottom: 56px;
+}
+
+.work-head .side {
+	max-width: 340px;
+	font-size: 14.5px;
+	line-height: 1.65;
+	opacity: 0.78;
+}
+
+@media (max-width: 900px) {
+	.work-head {
+		align-items: flex-start;
+		gap: 20px;
+		margin-bottom: 40px;
+	}
+
+	.work-head .side {
+		max-width: 100%;
+	}
+}

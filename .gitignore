@@ -1,3 +1,8 @@
+# Local 3D sources (too large for git)
+src/assets/models/*.glb
+src/assets/models/*.max
+src/assets/models/textury + model/
+
 # Logs
 logs
 *.log

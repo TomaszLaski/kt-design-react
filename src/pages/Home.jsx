@@ -1,12 +1,13 @@
 import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
 import Hero from '../components/sections/Hero';
-import WhyRender from '../components/sections/WhyRender';
-import Deliverables from '../components/sections/Deliverables';
-import Pipeline from '../components/sections/Pipeline';
+import Marquee from '../components/sections/Marquee';
+import Statement from '../components/sections/Statement';
 import Work from '../components/sections/Work';
-import About from '../components/sections/About';
-import Tools from '../components/sections/Tools';
+import Packshots from '../components/sections/Packshots';
+import Branding from '../components/sections/Branding';
+import Motion from '../components/sections/Motion';
+import Websites from '../components/sections/Websites';
+import Model3D from '../components/sections/Model3D';
 import ContactCTA from '../components/sections/ContactCTA';
 
 export default function Home() {
@@ -15,15 +16,16 @@ export default function Home() {
 			<Header />
 			<main>
 				<Hero />
-				<WhyRender />
-				<Deliverables />
-				<Pipeline />
+				<Marquee />
+				<Statement />
 				<Work />
-				<About />
-				<Tools />
+				<Packshots />
+				<Branding />
+				<Motion />
+				<Websites />
+				<Model3D />
 				<ContactCTA />
 			</main>
-			<Footer />
 		</>
 	);
 }

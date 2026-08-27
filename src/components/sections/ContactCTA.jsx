@@ -2,35 +2,35 @@ import './ContactCTA.css';
 
 export default function ContactCTA() {
 	return (
-		<section id="contact" className="cta">
-			<span className="mono">Contact</span>
-			<h2>Send us your product. Get a test frame back.</h2>
-			<p>
-				Share a CAD file, technical drawing, sketch or even a phone photo of your
-				product — we'll show you what it looks like as a hero shot.
-			</p>
-			<div className="row">
-				<a className="btn" href="mailto:klaudiatarkowska2@gmail.com">
-					klaudiatarkowska2@gmail.com
-				</a>
-				<a
-					className="btn"
-					href="https://www.instagram.com/vizco_studio/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Instagram →
-				</a>
-				<a
-					className="btn"
-					href="https://www.behance.net/klaudiatarkows1"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Behance →
-				</a>
+		<footer id="kontakt" className="contact">
+			<div className="wrap">
+				<div className="eyebrow" style={{ color: 'rgba(255,255,255,0.8)' }}>
+					Kontakt
+				</div>
+				<h2>
+					Masz produkt, wnętrze
+					<br />
+					albo markę do pokazania?
+				</h2>
+				<p className="contact-lede">Napisz, co chcesz pokazać — odpiszemy z pomysłem na pierwszy kadr.</p>
+				<div className="row">
+					<a className="contact-cta" href="mailto:hello@vizco.studio">
+						hello@vizco.studio
+						<span className="contact-cta-arrow" aria-hidden="true">
+							→
+						</span>
+					</a>
+					<div className="contact-meta">
+						Gdańsk, Polska
+						<br />
+						Projekty stacjonarne i zdalne
+					</div>
+				</div>
+				<div className="foot-bottom">
+					<span>© VIZCO — Studio wizualizacji 3D</span>
+					<span>Gdańsk, Polska</span>
+				</div>
 			</div>
-			<p className="cta-contact mono">(+48) 514 596 199</p>
-		</section>
+		</footer>
 	);
 }
